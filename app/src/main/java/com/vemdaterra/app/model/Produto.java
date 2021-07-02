@@ -26,8 +26,8 @@ public class Produto {
 	private double preco;
 	@NotNull
 	private int codigo;
-	@NotNull
-	private String URL;
+
+	private String url;
 
 	public long getId() {
 		return id;
@@ -69,12 +69,12 @@ public class Produto {
 		this.codigo = codigo;
 	}
 
-	public String getURL() {
-		return URL;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setURL(String uRL) {
-		URL = uRL;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }
