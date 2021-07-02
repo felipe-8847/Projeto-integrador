@@ -8,6 +8,9 @@ public class VemdaterraApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(VemdaterraApplication.class, args);
+		
+		
 	}
 
+	
 }
