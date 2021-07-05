@@ -2,6 +2,8 @@ package com.vemdaterra.app.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,27 +32,27 @@ public class CategoriaController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Categoria> GetById(@PathVariable long id) {
+	public ResponseEntity<Categoria> GetById(@PathVariable Long id) {
 		return categoria.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
 	@GetMapping("/tipo/{tipo}")
-	public ResponseEntity<List<Categoria>> GetByTipo(@PathVariable String tipo) {
+	public ResponseEntity<List<Categoria>> GetByTipo(@Valid @PathVariable String tipo) {
 		return ResponseEntity.ok(categoria.findAllByTipoContainingIgnoreCase(tipo));
 	}
 
 	@PostMapping
-	public ResponseEntity<Categoria> post(@RequestBody Categoria categor) {
+	public ResponseEntity<Categoria> post(@Valid @RequestBody Categoria categor) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoria.save(categor));
 	}
 
 	@PutMapping
-	public ResponseEntity<Categoria> put(@RequestBody Categoria categor) {
+	public ResponseEntity<Categoria> put(@Valid @RequestBody Categoria categor) {
 		return ResponseEntity.status(HttpStatus.OK).body(categoria.save(categor));
 	}
 
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable long id) {
+	public void delete(@Valid @PathVariable Long id) {
 		categoria.deleteById(id);
 	}
 

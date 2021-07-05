@@ -19,7 +19,7 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
 	@NotBlank
 	public String nome;
@@ -36,11 +36,11 @@ public class Usuario {
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produtoU;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

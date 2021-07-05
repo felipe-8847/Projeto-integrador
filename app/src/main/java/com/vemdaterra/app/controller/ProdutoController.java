@@ -2,6 +2,8 @@ package com.vemdaterra.app.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,27 +32,27 @@ public class ProdutoController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Produto> GetById(@PathVariable long id) {
+	public ResponseEntity<Produto> GetById(@PathVariable Long id) {
 		return produto.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
 	@GetMapping("/descricao/{descricao}")
-	public ResponseEntity<List<Produto>> GetByDescricao(@PathVariable String descricao) {
+	public ResponseEntity<List<Produto>> GetByDescricao(@Valid @PathVariable String descricao) {
 		return ResponseEntity.ok(produto.findAllByDescricaoContainingIgnoreCase(descricao));
 	}
 
 	@PostMapping
-	public ResponseEntity<Produto> post(@RequestBody Produto produto1) {
+	public ResponseEntity<Produto> post(@Valid @RequestBody Produto produto1) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(produto.save(produto1));
 	}
 
 	@PutMapping
-	public ResponseEntity<Produto> put(@RequestBody Produto produto1) {
+	public ResponseEntity<Produto> put(@Valid @RequestBody Produto produto1) {
 		return ResponseEntity.status(HttpStatus.OK).body(produto.save(produto1));
 	}
 
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable long id) {
+	public void delete(@Valid @PathVariable Long id) {
 		produto.deleteById(id);
 	}
 

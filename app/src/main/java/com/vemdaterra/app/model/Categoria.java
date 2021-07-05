@@ -19,7 +19,7 @@ public class Categoria {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
 	@NotNull
 	public String tipo;
@@ -28,11 +28,11 @@ public class Categoria {
 	@JsonIgnoreProperties({"categoria", "usuario"})
 	private List<Produto> produto;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
