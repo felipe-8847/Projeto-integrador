@@ -34,6 +34,11 @@ public class CategoriaController {
 		return categoria.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
+	@GetMapping("/tipo/{tipo}")
+	public ResponseEntity<List<Categoria>> GetByTipo(@PathVariable String tipo) {
+		return ResponseEntity.ok(categoria.findAllByTipoContainingIgnoreCase(tipo));
+	}
+
 	@PostMapping
 	public ResponseEntity<Categoria> post(@RequestBody Categoria categor) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoria.save(categor));
