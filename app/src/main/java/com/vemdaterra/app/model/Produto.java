@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -34,12 +33,11 @@ public class Produto {
 	private String url;
 
 	@ManyToOne
-	@Valid
-	@JsonIgnoreProperties({"produto"})
+	@JsonIgnoreProperties({ "produto" })
 	private Categoria categoria;
 
 	@ManyToOne
-	@JsonIgnoreProperties({"produtoU","produto"})
+	@JsonIgnoreProperties({ "produto" })
 	private Usuario usuario;
 
 	public Long getId() {

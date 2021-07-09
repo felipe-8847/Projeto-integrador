@@ -33,8 +33,8 @@ public class Usuario {
 	public String cupom;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("usuario")
-	private List<Produto> produtoU;
+	@JsonIgnoreProperties({ "usuario", "produto", "categoria" })
+	private List<Produto> produto;
 
 	public Long getId() {
 		return id;
@@ -77,11 +77,11 @@ public class Usuario {
 	}
 
 	public List<Produto> getProduto() {
-		return produtoU;
+		return produto;
 	}
 
-	public void setProduto(List<Produto> produtoU) {
-		this.produtoU = produtoU;
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
 
 }
