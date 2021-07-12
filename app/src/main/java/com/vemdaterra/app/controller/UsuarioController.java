@@ -1,6 +1,7 @@
 package com.vemdaterra.app.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vemdaterra.app.model.Usuario;
+import com.vemdaterra.app.model.dto.UserLogin;
 import com.vemdaterra.app.repository.UsuarioRepository;
+import com.vemdaterra.app.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuario")
@@ -27,6 +30,9 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository usuario;
+	
+	@Autowired
+	private UsuarioService service;
 
 	@GetMapping
 	public ResponseEntity<List<Usuario>> GetAll() {
@@ -45,9 +51,16 @@ public class UsuarioController {
 
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> post(@Valid @RequestBody Usuario usuario1) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(usuario.save(usuario1));
+		return service.CadastrarUsuario(usuario1).map(usuarioCadastrado -> ResponseEntity.status(201).body(usuarioCadastrado))
+				.orElse (ResponseEntity.status(400).build());
+		
 	}
-
+	
+	@PostMapping("/login")
+    public ResponseEntity<UserLogin> Autentication(@Valid @RequestBody Optional<UserLogin> user) {
+        return service.Logar(user).map(resp -> ResponseEntity.ok(resp))
+                .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+    }
 	@PutMapping("/atualizar")
 	public ResponseEntity<Usuario> put(@Valid @RequestBody  Usuario usuario1) {
 		return ResponseEntity.status(HttpStatus.OK).body(usuario.save(usuario1));
