@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,6 +35,10 @@ public class Usuario {
 	public String senha;
 
 	public Integer cupom;
+	
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private TipoDeUsuario tipo;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({ "usuario", "produto", "categoria" })
@@ -76,6 +82,15 @@ public class Usuario {
 
 	public void setCupom(Integer cupom) {
 		this.cupom = cupom;
+	}
+	
+
+	public TipoDeUsuario getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoDeUsuario tipo) {
+		this.tipo = tipo;
 	}
 
 	public List<Produto> getProduto() {
