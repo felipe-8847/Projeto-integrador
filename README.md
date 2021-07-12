@@ -1,6 +1,6 @@
 # Projeto-integrador 
 
-## Vem Da Terra
+## :seedling: Vem Da Terra :seedling:
 O sistema de e-commerce vai conectar os produtores sustentáveis com os consumidores, de forma a recompensar e estimular a população que recicla, através de descontos na compra dos produtos do VEM DA TERRA. Nossa missão é dar visibilidade para o pequeno produtor e apoiarmos ao apelo universal da Organização das Nações em quesito de Consumo e produção responsáveis, assegurando padrões de produção e de consumo sustentáveis. Nossos valores são a transparência, para que sejam ofertados preços acessíveis ao consumidor, o respeito entre consumidor e produtor para que exista uma experiência agradável e amigável, além de uma simples venda. Queremos coscientizar as pessoas para que ao longo do tempo elas se preocupem mais com o planeta Terra e passem a consumir produtos com menos embalagens ou embalagens sustentáveis. Gostariamos de convidar você a se tornar parte da nossa comunidade!
 
 ## FEATURES
