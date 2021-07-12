@@ -19,15 +19,19 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@NotNull
+
+	@NotNull(message = "Campo Não pode ser Nulo")
 	@Size(min = 2, max = 30)
 	private String nome;
-	@NotNull
+
+	@NotNull(message = "Campo Não pode ser Nulo")
 	@Size(min = 10, max = 200)
 	private String descricao;
-	@NotNull
+
+	@NotNull(message = "Campo Não pode ser Nulo")
 	private double preco;
-	@NotNull
+
+	@NotNull(message = "Campo Não pode ser Nulo")
 	private int codigo;
 
 	private String url;

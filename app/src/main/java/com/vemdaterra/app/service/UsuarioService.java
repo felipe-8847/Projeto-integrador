@@ -21,6 +21,7 @@ public class UsuarioService {
 
 	public Optional<Usuario> CadastrarUsuario(Usuario usuario) {
 		Optional<Usuario> usuarioExistente = repository.findAllByEmailContainingIgnoreCase(usuario.getEmail());
+	
 		if (usuarioExistente.isPresent()) {
 			return Optional.empty();
 		} else {
