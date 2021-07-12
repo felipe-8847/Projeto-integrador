@@ -21,7 +21,7 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotNull
+	@NotNull(message = "Campo Não pode ser Nulo")
 	public String tipo;
 
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)

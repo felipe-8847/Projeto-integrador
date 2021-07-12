@@ -1,6 +1,7 @@
 package com.vemdaterra.app.service;
 
 import java.nio.charset.Charset;
+
 import java.util.Optional;
 
 import org.apache.commons.codec.binary.Base64;
@@ -18,31 +19,38 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 
-	public Usuario CadastrarUsuario(Usuario usuario) {
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+	public Optional<Usuario> CadastrarUsuario(Usuario usuario) {
+		Optional<Usuario> usuarioExistente = repository.findAllByEmailContainingIgnoreCase(usuario.getEmail());
+	
+		if (usuarioExistente.isPresent()) {
+			return Optional.empty();
+		} else {
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-		String senhaEncoder = encoder.encode(usuario.getSenha());
-		usuario.setSenha(senhaEncoder);
+			String senhaEncoder = encoder.encode(usuario.getSenha());
+			usuario.setSenha(senhaEncoder);
 
-		return repository.save(usuario);
+			return Optional.ofNullable(repository.save(usuario));
+
+		}
 
 	}
 
-	public Optional<UserLogin> Logar(Optional<UserLogin> user) {
+	public Optional<UserLogin> Logar(Optional<UserLogin> userEmail) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<Usuario> usuario = repository.findAllByEmailContainingIgnoreCase(user.get().getEmail());
+		Optional<Usuario> usuario = repository.findAllByEmailContainingIgnoreCase(userEmail.get().getEmail());
 
 		if (usuario.isPresent()) {
-			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
+			if (encoder.matches(userEmail.get().getSenha(), usuario.get().getSenha())) {
 
-				String auth = user.get().getEmail() + ":" + user.get().getSenha();
+				String auth = userEmail.get().getEmail() + ":" + userEmail.get().getSenha();
 				byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodeAuth);
 
-				user.get().setToken(authHeader);
-				user.get().setNome(usuario.get().getNome());
+				userEmail.get().setToken(authHeader);
+				userEmail.get().setNome(usuario.get().getNome());
 
-				return user;
+				return userEmail;
 			}
 		}
 		return null;

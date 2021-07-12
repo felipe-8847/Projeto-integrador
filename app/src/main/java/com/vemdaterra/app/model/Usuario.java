@@ -9,7 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -21,16 +22,17 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotBlank
+	@NotNull(message = "Campo Não pode ser Nulo")
 	public String nome;
 
-	@NotBlank
+	@Email(message = "Campo precisa ser E-mail")
+	@NotNull(message = "Campo Não pode ser Nulo")
 	public String email;
 
-	@NotBlank
+	@NotNull(message = "Campo Não pode ser Nulo")
 	public String senha;
 
-	public String cupom;
+	public Integer cupom;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({ "usuario", "produto", "categoria" })
@@ -68,11 +70,11 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public String getCupom() {
+	public Integer getCupom() {
 		return cupom;
 	}
 
-	public void setCupom(String cupom) {
+	public void setCupom(Integer cupom) {
 		this.cupom = cupom;
 	}
 
