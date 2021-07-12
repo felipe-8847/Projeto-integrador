@@ -30,7 +30,7 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioRepository usuario;
-	
+
 	@Autowired
 	private UsuarioService service;
 
@@ -43,34 +43,29 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> GetById(@PathVariable Long id) {
 		return usuario.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
-<<<<<<< HEAD
-	
-	@GetMapping("/email/{email}")
-	public ResponseEntity<List<Usuario>> GetByEmail(@Valid @PathVariable String email) {
-		return ResponseEntity.ok(usuario.findAllByListEmailContainingIgnoreCase(email));
-	}
-=======
 
-	/*@GetMapping("/email/{email}")
-	public ResponseEntity<List<Usuario>> GetByEmail(@Valid @PathVariable String email) {
-		return ResponseEntity.ok(usuario.findAllByListEmailContainingIgnoreCase(email));
-	} */
->>>>>>> 9925506c568ddde8db3df53d06145cca1bc5805f
+	/*
+	 * @GetMapping("/email/{email}") public ResponseEntity<List<Usuario>>
+	 * GetByEmail(@Valid @PathVariable String email) { return
+	 * ResponseEntity.ok(usuario.findAllByListEmailContainingIgnoreCase(email)); }
+	 */
 
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> post(@Valid @RequestBody Usuario usuario1) {
-		return service.CadastrarUsuario(usuario1).map(usuarioCadastrado -> ResponseEntity.status(201).body(usuarioCadastrado))
-				.orElse (ResponseEntity.status(400).build());
-		
+		return service.CadastrarUsuario(usuario1)
+				.map(usuarioCadastrado -> ResponseEntity.status(201).body(usuarioCadastrado))
+				.orElse(ResponseEntity.status(400).build());
+
 	}
-	
+
 	@PostMapping("/login")
-    public ResponseEntity<UserLogin> Autentication(@Valid @RequestBody Optional<UserLogin> user) {
-        return service.Logar(user).map(resp -> ResponseEntity.ok(resp))
-                .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
-    }
+	public ResponseEntity<UserLogin> Autentication(@Valid @RequestBody Optional<UserLogin> user) {
+		return service.Logar(user).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+	}
+
 	@PutMapping("/atualizar")
-	public ResponseEntity<Usuario> put(@Valid @RequestBody  Usuario usuario1) {
+	public ResponseEntity<Usuario> put(@Valid @RequestBody Usuario usuario1) {
 		return ResponseEntity.status(HttpStatus.OK).body(usuario.save(usuario1));
 	}
 
