@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import com.vemdaterra.app.repository.UsuarioRepository;
 
 @RestController
 @RequestMapping("/usuario")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
 
 	@Autowired
@@ -38,8 +40,8 @@ public class UsuarioController {
 
 	@GetMapping("/email/{email}")
 	public ResponseEntity<List<Usuario>> GetByEmail(@Valid @PathVariable String email) {
-		return ResponseEntity.ok(usuario.findAllByEmailContainingIgnoreCase(email));
-	}
+		return ResponseEntity.ok(usuario.findAllByListEmailContainingIgnoreCase(email));
+	} 
 
 	@PostMapping
 	public ResponseEntity<Usuario> post(@Valid @RequestBody Usuario usuario1) {
@@ -47,7 +49,7 @@ public class UsuarioController {
 	}
 
 	@PutMapping
-	public ResponseEntity<Usuario> put(@Valid @RequestBody Usuario usuario1) {
+	public ResponseEntity<Usuario> put(@Valid @RequestBody  Usuario usuario1) {
 		return ResponseEntity.status(HttpStatus.OK).body(usuario.save(usuario1));
 	}
 
