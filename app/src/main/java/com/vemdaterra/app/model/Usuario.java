@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -25,6 +26,7 @@ public class Usuario {
 	private Long id;
 
 	@NotNull(message = "Campo Não pode ser Nulo")
+	@Size(min = 2, max = 200)
 	public String nome;
 
 	@Email(message = "Campo precisa ser E-mail")
@@ -32,6 +34,7 @@ public class Usuario {
 	public String email;
 
 	@NotNull(message = "Campo Não pode ser Nulo")
+	@Size(min = 6)
 	public String senha;
 
 	public Integer cupom;
