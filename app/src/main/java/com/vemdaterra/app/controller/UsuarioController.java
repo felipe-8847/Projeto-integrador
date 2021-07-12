@@ -37,11 +37,11 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> GetById(@PathVariable Long id) {
 		return usuario.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
-
+	
 	@GetMapping("/email/{email}")
 	public ResponseEntity<List<Usuario>> GetByEmail(@Valid @PathVariable String email) {
 		return ResponseEntity.ok(usuario.findAllByListEmailContainingIgnoreCase(email));
-	} 
+	}
 
 	@PostMapping
 	public ResponseEntity<Usuario> post(@Valid @RequestBody Usuario usuario1) {
