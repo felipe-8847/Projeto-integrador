@@ -38,17 +38,17 @@ public class UsuarioController {
 		return usuario.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
-	@GetMapping("/email/{email}")
+	/*@GetMapping("/email/{email}")
 	public ResponseEntity<List<Usuario>> GetByEmail(@Valid @PathVariable String email) {
 		return ResponseEntity.ok(usuario.findAllByListEmailContainingIgnoreCase(email));
-	} 
+	} */
 
-	@PostMapping
+	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> post(@Valid @RequestBody Usuario usuario1) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuario.save(usuario1));
 	}
 
-	@PutMapping
+	@PutMapping("/atualizar")
 	public ResponseEntity<Usuario> put(@Valid @RequestBody  Usuario usuario1) {
 		return ResponseEntity.status(HttpStatus.OK).body(usuario.save(usuario1));
 	}
