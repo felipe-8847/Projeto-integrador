@@ -86,6 +86,15 @@ public class Usuario {
 	public void setCupom(Integer cupom) {
 		this.cupom = cupom;
 	}
+	
+
+	public TipoDeUsuario getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoDeUsuario tipo) {
+		this.tipo = tipo;
+	}
 
 	public TipoDeUsuario getTipo() {
 		return tipo;
