@@ -27,32 +27,32 @@ public class ProdutoController {
 	private ProdutoRepository produto;
 
 	@GetMapping
-	public ResponseEntity<List<Produto>> GetAll() {
+	public ResponseEntity<List<Produto>> buscarTodos() {
 		return ResponseEntity.ok(produto.findAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Produto> GetById(@PathVariable Long id) {
+	public ResponseEntity<Produto> buscarPorId(@PathVariable Long id) {
 		return produto.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
 	@GetMapping("/descricao/{descricao}")
-	public ResponseEntity<List<Produto>> GetByDescricao(@Valid @PathVariable String descricao) {
+	public ResponseEntity<List<Produto>> buscarPorDescricao(@Valid @PathVariable String descricao) {
 		return ResponseEntity.ok(produto.findAllByDescricaoContainingIgnoreCase(descricao));
 	}
 
 	@PostMapping
-	public ResponseEntity<Produto> post(@Valid @RequestBody Produto produto1) {
+	public ResponseEntity<Produto> cadastrarProduto(@Valid @RequestBody Produto produto1) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(produto.save(produto1));
 	}
 
 	@PutMapping
-	public ResponseEntity<Produto> put(@Valid @RequestBody Produto produto1) {
+	public ResponseEntity<Produto> atualizarProduto(@Valid @RequestBody Produto produto1) {
 		return ResponseEntity.status(HttpStatus.OK).body(produto.save(produto1));
 	}
 
 	@DeleteMapping("/{id}")
-	public void delete(@Valid @PathVariable Long id) {
+	public void deletarProduto(@Valid @PathVariable Long id) {
 		produto.deleteById(id);
 	}
 
