@@ -35,42 +35,35 @@ public class UsuarioController {
 	private UsuarioService service;
 
 	@GetMapping
-	public ResponseEntity<List<Usuario>> GetAll() {
+	public ResponseEntity<List<Usuario>> buscarTodos() {
 		return ResponseEntity.ok(usuario.findAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Usuario> GetById(@PathVariable Long id) {
+	public ResponseEntity<Usuario> buscarPorId(@PathVariable Long id) {
 		return usuario.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
-	/*
-	 * @GetMapping("/email/{email}") public ResponseEntity<List<Usuario>>
-	 * GetByEmail(@Valid @PathVariable String email) { return
-	 * ResponseEntity.ok(usuario.findAllByListEmailContainingIgnoreCase(email)); }
-	 */
-
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Usuario> post(@Valid @RequestBody Usuario usuario1) {
+	public ResponseEntity<Usuario> cadastrarUsuario(@Valid @RequestBody Usuario usuario1) {
 		return service.CadastrarUsuario(usuario1)
 				.map(usuarioCadastrado -> ResponseEntity.status(201).body(usuarioCadastrado))
 				.orElse(ResponseEntity.status(400).build());
-
 	}
 
 	@PostMapping("/login")
-	public ResponseEntity<UserLogin> Autentication(@Valid @RequestBody Optional<UserLogin> user) {
+	public ResponseEntity<UserLogin> logarNaConta(@Valid @RequestBody Optional<UserLogin> user) {
 		return service.Logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 
 	@PutMapping("/atualizar")
-	public ResponseEntity<Usuario> put(@Valid @RequestBody Usuario usuario1) {
+	public ResponseEntity<Usuario> atualizarUsuario(@Valid @RequestBody Usuario usuario1) {
 		return ResponseEntity.status(HttpStatus.OK).body(usuario.save(usuario1));
 	}
 
 	@DeleteMapping("/{id}")
-	public void delete(@Valid @PathVariable Long id) {
+	public void deletarUsuario(@Valid @PathVariable Long id) {
 		usuario.deleteById(id);
 	}
 

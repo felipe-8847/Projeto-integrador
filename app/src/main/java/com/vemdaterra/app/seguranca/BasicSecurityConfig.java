@@ -19,6 +19,8 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication().withUser("boaz").password(passwordEncoder().encode("boaz"))
+				.authorities("ROLE_ADMIN");
 		auth.userDetailsService(userDetailsService);
 	}
 
@@ -31,7 +33,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/usuario/login").permitAll()
 				.antMatchers(HttpMethod.POST, "/usuario/cadastrar").permitAll()
-				// .antMatchers("/usuario").permitAll()
 				.anyRequest().authenticated().and().httpBasic().and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().cors().and().csrf().disable();
 	}
