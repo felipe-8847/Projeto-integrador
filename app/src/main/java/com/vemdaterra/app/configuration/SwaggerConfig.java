@@ -29,8 +29,8 @@ public class SwaggerConfig {
 
 	public static ApiInfo metadata() {
 	return new ApiInfoBuilder()
-	.title("API - Blog Pessoal")
-	.description("Projeto API Spring - Blog Pessoal")
+	.title("Vem Da Terra")
+	.description("E-Commerce Vem Da Terra")
 	.version("1.0.0")
 	.license("Apache License Version 2.0")
 	.licenseUrl("http://localhost:8080/swagger-ui/")
