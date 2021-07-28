@@ -38,10 +38,10 @@ public class Usuario {
 	public String senha;
 
 	public Integer cupom;
-	
+
 	@NotNull
-    @Enumerated(EnumType.STRING)
-    private TipoDeUsuario tipo;
+	@Enumerated(EnumType.STRING)
+	private TipoDeUsuario tipo;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({ "usuario", "produto", "categoria" })
@@ -85,15 +85,6 @@ public class Usuario {
 
 	public void setCupom(Integer cupom) {
 		this.cupom = cupom;
-	}
-	
-
-	public TipoDeUsuario getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(TipoDeUsuario tipo) {
-		this.tipo = tipo;
 	}
 
 	public TipoDeUsuario getTipo() {
