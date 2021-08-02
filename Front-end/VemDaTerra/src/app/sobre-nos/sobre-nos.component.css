@@ -1,0 +1,12 @@
+.row{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    align-items: center;
+    font-size: 18px;
+    padding: 30px;
+
+}
+.col-md-4{
+    height: 50px;
+    width: 50px;
+    align-items: center;
+}
