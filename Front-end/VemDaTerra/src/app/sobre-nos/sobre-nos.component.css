@@ -1,12 +1,13 @@
-.row{
+.col-md-7{
     font-family: 'Atkinson Hyperlegible', sans-serif;
     align-items: center;
-    font-size: 18px;
+    font-size: 20px;
     padding: 30px;
-
+    text-align: justify;
 }
-.col-md-4{
-    height: 50px;
-    width: 50px;
+.col-md-5{
     align-items: center;
+}
+.br-50 {
+    border-radius: 3%;
 }
