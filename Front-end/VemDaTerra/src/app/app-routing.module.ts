@@ -12,7 +12,7 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
 
   {path:'inicio', component: InicioComponent},
   {path:'sobre', component: SobreNosComponent},
@@ -22,10 +22,6 @@ const routes: Routes = [
   {path: 'cadastro/categoria', component: CadastroCategoriaComponent},
   {path: 'cadastro/produto', component: CadastroProdutoComponent},
   {path: 'produto', component: CardProdutoComponent}
-
-
-
-
 ];
 
 @NgModule({

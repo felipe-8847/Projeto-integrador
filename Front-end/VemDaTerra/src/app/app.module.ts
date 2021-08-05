@@ -13,9 +13,10 @@ import { ContatoComponent } from './contato/contato.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-categoria.component';
+
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { CardProdutoComponent } from './card-produto/card-produto.component';
+import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-categoria.component';
 
 
 @NgModule({

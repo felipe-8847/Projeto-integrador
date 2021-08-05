@@ -15,12 +15,12 @@ export class AuthService {
   ) { }
 
   login(userLogin: UserLogin): Observable<UserLogin> {
-    return this.http.post<UserLogin>('https://vemdaterra.herokuapp.com/usuario/login', userLogin)
+    return this.http.post<UserLogin>('https://vemdaterrabrasil.herokuapp.com/usuario/login', userLogin)
 
   }
 
   cadastro(user: User): Observable<User> {
-    return this.http.post<User>('https://vemdaterra.herokuapp.com/usuario/cadastrar', user)
+    return this.http.post<User>('https://vemdaterrabrasil.herokuapp.com/usuario/cadastrar', user)
 
   }
 
