@@ -1,20 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-success text-white">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #31591E;">
+
   <div class="container-fluid">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-white">
-        <li class="nav-item text-white">
-          <a class="nav-link active" routerLink='/inicio' aria-current="page" href="#">Início</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink='/inicio' aria-current="page" href="#">Início</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" routerLink='/sobre' aria-current="page" href="#">Sobre Nós</a>
+          <a class="nav-link text-white" routerLink='/sobre' aria-current="page" href="#">Sobre Nós</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" routerLink='/contato' href="#">Contato</a>
+          <a class="nav-link text-white" routerLink='/contato' href="#">Contato</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
             Nossos produtos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -29,11 +30,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" routerLink='/login' href="#">Entrar</a>
+          <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#login" href="#">Entrar</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" routerLink='' href="#">Sair</a>
+          <a class="nav-link text-white" (click)='sair()' href="#">Sair</a>
         </li>
 
       </ul>
@@ -44,3 +45,41 @@
     </div>
   </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content br-50 wh">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado" class='justify-content-center'>Faça login</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+          <div class="modal-body">
+            <div class="form-group my-2">
+              <label for="email">Endereço de email</label>
+              <input [(ngModel)]="userLogin.email" type="email" class="form-control" id="email" aria-describedby="email"
+                placeholder="Digite seu email">
+            </div>
+            <div class="form-group my-2 ">
+              <label for="senha">Senha</label>
+              <input [(ngModel)]="userLogin.senha" type="password" class="form-control" id="senha"
+                placeholder="Digite uma Senha">
+            </div>
+
+          </div>
+          <div class="modal-footer d-flex justify-content-center my-2">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" routerLink='/inicio'>Cancelar</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)='login()'>Entrar</button>
+          </div>
+          
+          <p class="text-center">Não tem uma conta? <a routerLink='/cadastro' data-bs-dismiss="modal">Cadastre-se</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

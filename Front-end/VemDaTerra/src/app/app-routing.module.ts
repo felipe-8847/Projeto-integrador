@@ -9,6 +9,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 const routes: Routes = [
 
+  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
+
   {path:'inicio', component: InicioComponent},
   {path:'sobre', component: SobreNosComponent},
   {path:'contato', component: ContatoComponent},

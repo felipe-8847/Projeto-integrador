@@ -1,4 +1,8 @@
-nav{
-font-weight: bold;
-text-decoration: white;
+.br-50 {
+    border-radius: 3%;
 }
+.wh{
+    width: 400px;
+    height: 400px;
+}
+
