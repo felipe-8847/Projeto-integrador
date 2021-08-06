@@ -9,6 +9,7 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
+  
   user: User = new User
   confirmarSenha: string
   tipoUsuario: string
@@ -32,7 +33,7 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrarUser() {
-    console.log("usuer " + JSON.stringify(this.user))
+    console.log("user " + JSON.stringify(this.user))
     this.user.tipo = this.tipoUsuario
     if (this.user.senha != this.confirmarSenha) {
       alert("Senha não correspondente")
