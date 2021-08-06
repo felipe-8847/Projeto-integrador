@@ -10,13 +10,13 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { ContatoComponent } from './contato/contato.component';
-import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { CardProdutoComponent } from './card-produto/card-produto.component';
 import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-categoria.component';
+//import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -26,8 +26,8 @@ import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-catego
     RodapeComponent,
     InicioComponent,
     SobreNosComponent,
+    //LoginComponent,
     ContatoComponent,
-    LoginComponent,
     CadastroComponent,
     CadastroCategoriaComponent,
     CadastroProdutoComponent,
