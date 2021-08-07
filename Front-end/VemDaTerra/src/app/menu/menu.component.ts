@@ -8,25 +8,33 @@ import { AuthService } from '../service/auth.service';
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
-})
+  })
 export class MenuComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
+  env: any = environment
+  localStorageEmail = localStorage.getItem('email')
+  localStorageTipoUsuario = localStorage.getItem('tipoUsuario')
 
   constructor(
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    
   ) { }
 
   ngOnInit() {
     window.scroll(0,0)
+  
   }
   login(){
+    
     this.auth.login(this.userLogin).subscribe((resp: UserLogin)=>{
-      this.userLogin = resp
-      environment.token = this.userLogin.token
-      environment.nome = this.userLogin.nome
-      environment.id = this.userLogin.id
+       this.userLogin = resp
+          
+      localStorage.setItem('email', resp.email);//localstorage é para guardar que o usuario é admin
+     this.localStorageEmail = resp.email
+      localStorage.setItem('tipoUsuario', resp.tipo);
+       this.localStorageTipoUsuario = resp.tipo
 
     
       this.router.navigate(['/inicio'])
@@ -37,10 +45,14 @@ export class MenuComponent implements OnInit {
     })
   }
   sair(){
-    this.router.navigate(['/entrar'])
-    environment.token = ''
-    environment.nome = ''
-    environment.id = 0
-  }
+    localStorage.removeItem("email")
+    this.localStorageEmail = null
 
+    localStorage.removeItem("tipoUsuario")
+    this.localStorageTipoUsuario = null
+   // this.router.navigate(['/entrar'])
+   // environment.token = ''
+    //environment.nome = ''
+    //environment.id = 0
+  }
 }
