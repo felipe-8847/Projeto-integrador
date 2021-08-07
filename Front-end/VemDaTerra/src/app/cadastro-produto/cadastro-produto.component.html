@@ -1,0 +1,98 @@
+<div class="conteiner-fuid">
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-6 mt-4 mb-5">
+
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-md-8">
+
+                    <h1 class="text-center">Cadastrar Produtos</h1>
+
+                    <div class="form-group mt-3">
+                        <label for="nome">Nome</label>
+                        <input [(ngModel)]='produto.nome' class="form-control" type="text" name="nome" id="nome"
+                            placeholder="Nome do produto">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="descricao">Descrição</label>
+                        <input [(ngModel)]='produto.descricao' class="form-control" type="text" name="descricao"
+                            id="descricao" placeholder="Descrição do produto">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="preco">Preço:</label>
+                        <input [(ngModel)]='produto.preco' class="form-control" type="number" name="preco" id="preco"
+                            placeholder="Valor do produto">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="codigo">Código</label>
+                        <input [(ngModel)]='produto.codigo' class="form-control" type="number" name="codigo" id="codigo"
+                            placeholder="Digite o codigo">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="url">Url do produto</label>
+                        <input [(ngModel)]='produto.url' class="form-control" type="text" name="url" id="url"
+                            placeholder="Seu link da sua foto">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="categoria">Tipo de categoria</label>
+                        <select class="form-control" name="categoria" id="categoria">
+                            <option>Selecione a categoria</option>
+                            <option value="PAPELARIA">Papelaria</option>
+                            <option value="ALIMENTO">Alimento</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-danger me-3 cancelar"
+                            routerLink='/inicio'>Cancelar</button>
+                        <button type="submit" class="btn btn-success" (click)='cadastrarP()'>Cadastrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h2 class="text-center">Todos os Produtos</h2>
+      </div>
+    </div>
+  
+  
+    <div class="row mt-3 mb-5 d-flex justify-content-center">
+      <div class="col-md-6">
+  
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Descricao</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Código</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr *ngFor='let prod of listaProdutos'>
+              <th>{{prod.id}}</th>
+              <td>{{prod.nome}}</td>
+              <td>{{prod.descricao}}</td>
+              <td>{{prod.preco}}</td>
+              <td>{{prod.codigo}}</td>
+            </tr>
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>
