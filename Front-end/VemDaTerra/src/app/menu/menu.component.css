@@ -6,3 +6,6 @@
     height: 400px;
 }
 
+.nav-link{
+    text-transform: bold;
+}
