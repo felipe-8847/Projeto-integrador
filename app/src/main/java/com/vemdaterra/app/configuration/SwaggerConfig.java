@@ -31,7 +31,7 @@ public class SwaggerConfig {
 	return new ApiInfoBuilder()
 	.title("Vem Da Terra")
 	.description("E-Commerce Vem Da Terra")
-	.version("1.0.0")
+	.version("1.1.0")
 	.license("Apache License Version 2.0")
 	.licenseUrl("http://localhost:8080/swagger-ui/")
 	.contact(contact())
