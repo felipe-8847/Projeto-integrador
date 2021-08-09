@@ -12,7 +12,7 @@ export class CadastroComponent implements OnInit {
   
   user: User = new User
   confirmarSenha: string
-  tipoUsuario: string
+  tipo: string
 
   constructor(
     private authService: AuthService,
@@ -29,12 +29,12 @@ export class CadastroComponent implements OnInit {
   }
 
   tipoUser(event: any) {
-    this.tipoUsuario = event.target.value
+    this.tipo = event.target.value
   }
 
   cadastrarUser() {
     console.log("user " + JSON.stringify(this.user))
-    this.user.tipo = this.tipoUsuario
+    this.user.tipo = this.tipo
     if (this.user.senha != this.confirmarSenha) {
       alert("Senha não correspondente")
     } else {

@@ -1,53 +1,59 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #31591E;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fefffd;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fefffd;">
+  
+      <div class="container-fluid">
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-bold" routerLink='/inicio' aria-current="page" href="#">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-bold" routerLink='/sobre' aria-current="page" href="#">Sobre Nós</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-bold" routerLink='/contato' href="#">Contato</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-bold" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Nossos produtos
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" routerLink='/produto'>Alimentos</a></li>
+                <li><a class="dropdown-item" routerLink='/produto'>Cosméticos</a></li>
+                <li><a class="dropdown-item" routerLink='/produto'>Higiene</a></li>
+                <li><a class="dropdown-item" routerLink='/produto'>Vestuário</a></li>
+                <li><a class="dropdown-item" routerLink='/produto'>Papelaria</a></li>
+                <li><a class="dropdown-item" routerLink='/produto'>Mobilia</a></li>
+  
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+  
+                <li *ngIf="localStorageTipo=='ADM' "><a class="dropdown-item" routerLink='/cadastro/categoria'>Cadastrar
+                    categoria</a></li>
+                <li *ngIf="localStorageTipo=='ADM'"><a class="dropdown-item" routerLink='/cadastro/produto'>Cadastrar
+                    produto</a></li>
+  
+              </ul>
+            </li>
 
-  <div class="container-fluid">
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-white" routerLink='/inicio' aria-current="page" href="#">Início</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" routerLink='/sobre' aria-current="page" href="#">Sobre Nós</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" routerLink='/contato' href="#">Contato</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Nossos produtos
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink='/produto' >Alimentos</a></li>
-            <li><a class="dropdown-item" routerLink='/produto' >Cosméticos</a></li>
-            <li><a class="dropdown-item" routerLink='/produto' >Higiene</a></li>
-            <li><a class="dropdown-item" routerLink='/produto' >Vestuário</a></li>
-            <li><a class="dropdown-item" routerLink='/produto' >Papelaria</a></li>
-            <li><a class="dropdown-item" routerLink='/produto' >Mobilia</a></li>
-
-            <li><hr class="dropdown-divider"></li>
-            
-            <li><a class="dropdown-item" routerLink='/cadastro/categoria' >Cadastrar categoria</a></li>
-            <li><a class="dropdown-item" routerLink='/cadastro/produto' >Cadastrar produto</a></li>
-            
+            <li *ngIf="!localStorageEmail" class="nav-item">
+              <a class="nav-link text-bold" data-bs-toggle="modal" data-bs-target="#login" href="#">Entrar</a>
+            </li>
+  
+            <li *ngIf="localStorageEmail" class="nav-item">
+              <a class="nav-link text-bold" (click)='sair()'>Sair</a>
+            </li> 
+  
           </ul>
-        </li>
+        </div>
+      </div>
+    </nav>
 
-        <li class="nav-item">
-          <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#login" href="#">Entrar</a>
-        </li> 
-
-        <li class="nav-item">
-          <a class="nav-link text-white" routerLink='/' href="#">Sair</a>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!--Modal --> 
+<!--Modal -->
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered col-md-12 d-flex justify-content-center" role="document">
@@ -71,13 +77,13 @@
 
           </div>
           <div class="modal-footer d-flex justify-content-center my-2">
-            <button type="button" class="btn btn-danger me-3" data-bs-dismiss="modal" routerLink='/inicio'>Cancelar</button>
+            <button type="button" class="btn btn-danger me-3" data-bs-dismiss="modal">Cancelar</button>
             <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)='login()'>Entrar</button>
           </div>
           
-          <p class="text-center">Não tem uma conta? <a routerLink='/cadastro' data-bs-dismiss="modal">Cadastre-se</a></p>
+          <p class="text-center">Não tem uma conta? <a data-bs-dismiss="modal" routerLink='/cadastro'>Cadastre-se</a></p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> 

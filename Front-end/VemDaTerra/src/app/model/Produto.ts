@@ -8,7 +8,7 @@ export class Produto{
     public preco: number
     public codigo: number
     public url: string
-    public categoria: Categoria[]
+    public categoria: Categoria
     public usuario: User[]
 
 }

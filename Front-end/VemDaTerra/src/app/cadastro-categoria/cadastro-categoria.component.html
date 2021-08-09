@@ -49,6 +49,10 @@
           <tr *ngFor='let item of listaCategorias'>
             <th>{{item.id}}</th>
             <td>{{item.tipo}}</td>
+            <td class="d-flex justify-content-end">
+              <button class="btn btn-info me-3">Editar</button>
+              <button class="btn btn-danger">Apagar</button>
+            </td>
           </tr>
         </tbody>
       </table>
