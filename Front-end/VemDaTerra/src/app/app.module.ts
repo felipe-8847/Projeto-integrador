@@ -16,6 +16,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { CardProdutoComponent } from './card-produto/card-produto.component';
 import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-categoria.component';
+import { CategoriaComponent } from './edit/categoria/categoria.component';
 //import { LoginComponent } from './login/login.component';
 
 
@@ -31,7 +32,8 @@ import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-catego
     CadastroComponent,
     CadastroCategoriaComponent,
     CadastroProdutoComponent,
-    CardProdutoComponent
+    CardProdutoComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,
