@@ -21,7 +21,7 @@ export class ProdutoComponent implements OnInit {
     private produtoService: ProdutoService,
     private router: Router,
     private route: ActivatedRoute,
-    private categoriaService: CategoriaServicegit 
+    private categoriaService: CategoriaService
   ) { }
 
   ngOnInit(): void {
@@ -33,16 +33,30 @@ export class ProdutoComponent implements OnInit {
   }
 
   findByIdProduto(id: number){
-    this.produtoService.getByIdProduto(id).subscribe((resp: Produto) =>{
-      this.produto = resp
-    })
-  }
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto) =>{this.produto = resp})
 
-  atualizar(){
-    this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
-      this.produto = resp
-      alert('Tema atualizado com sucesso!')
-      this.router.navigate(['/tema'])
-    })
-  }
+  //findByIdPostagem(id: number){
+   // this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
+     // this.postagem = resp
+   // })
+
+   atualizar(){
+     this.produto.id = this.idProduto
+    this.produto.categoria = this.categoriaService
+    
+      this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
+        alert('Postagem atualizada com sucesso!')
+      this.router.navigate(['/inicio'])
+      })
+    }
 }
+ 
+//atualizar(){
+//  this.tema.id = this.idTema
+  //this.postagem.tema = this.tema
+
+//  this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) =>{
+  //  alert('Postagem atualizada com sucesso!')
+    //this.router.navigate(['/inicio'])
+  //})
+//}
