@@ -6,5 +6,5 @@ export class User{
     public senha: string
     public tipo: string
     public produto: Produto[] 
-    public tipoUsuario: string
+ //   public tipoUsuario: string
 }

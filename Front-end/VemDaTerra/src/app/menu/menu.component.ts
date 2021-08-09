@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   userLogin: UserLogin = new UserLogin()
   env: any = environment
   localStorageEmail = localStorage.getItem('email')
-  localStorageTipoUsuario = localStorage.getItem('tipoUsuario')
+  localStorageTipo = localStorage.getItem('tipo')
 
   constructor(
     private auth: AuthService,
@@ -33,8 +33,8 @@ export class MenuComponent implements OnInit {
           
       localStorage.setItem('email', resp.email);//localstorage é para guardar que o usuario é admin
      this.localStorageEmail = resp.email
-      localStorage.setItem('tipoUsuario', resp.tipo);
-       this.localStorageTipoUsuario = resp.tipo
+      localStorage.setItem('tipo', resp.tipo);
+       this.localStorageTipo = resp.tipo
 
     
       this.router.navigate(['/inicio'])
@@ -49,7 +49,7 @@ export class MenuComponent implements OnInit {
     this.localStorageEmail = null
 
     localStorage.removeItem("tipoUsuario")
-    this.localStorageTipoUsuario = null
+    this.localStorageTipo = null
    // this.router.navigate(['/entrar'])
    // environment.token = ''
     //environment.nome = ''

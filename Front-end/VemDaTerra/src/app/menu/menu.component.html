@@ -29,8 +29,8 @@
             <li><hr class="dropdown-divider"></li>
             
 
-            <li *ngIf="localStorageTipoUsuario=='admin' "><a class="dropdown-item" routerLink='/cadastro/categoria' >Cadastrar categoria</a></li>
-            <li *ngIf="localStorageTipoUsuario=='admin'"><a class="dropdown-item" routerLink='/cadastro/produto' >Cadastrar produto</a></li>
+            <li *ngIf="localStorageTipo=='ADM' "><a class="dropdown-item" routerLink='/cadastro/categoria' >Cadastrar categoria</a></li>
+            <li *ngIf="localStorageTipo=='ADM'"><a class="dropdown-item" routerLink='/cadastro/produto' >Cadastrar produto</a></li>
             
           </ul>
         </li>
