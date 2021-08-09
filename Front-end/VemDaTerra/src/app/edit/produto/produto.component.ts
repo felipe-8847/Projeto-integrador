@@ -40,16 +40,16 @@ export class ProdutoComponent implements OnInit {
      // this.postagem = resp
    // })
 
-   atualizar(){
-     this.produto.id = this.idProduto
-    this.produto.categoria = this.categoriaService
+   //atualizar(){
+//      this.produto.id = this.idProduto
+//     this.produto.categoria = this.categoriaService
     
-      this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
-        alert('Postagem atualizada com sucesso!')
-      this.router.navigate(['/inicio'])
-      })
-    }
-}
+//       this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
+//         alert('Postagem atualizada com sucesso!')
+//       this.router.navigate(['/inicio'])
+//       })
+//     }
+// }
  
 //atualizar(){
 //  this.tema.id = this.idTema
@@ -59,4 +59,6 @@ export class ProdutoComponent implements OnInit {
   //  alert('Postagem atualizada com sucesso!')
     //this.router.navigate(['/inicio'])
   //})
-//}
+  
+}
+}
