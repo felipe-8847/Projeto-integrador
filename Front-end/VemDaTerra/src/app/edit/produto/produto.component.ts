@@ -14,8 +14,9 @@ import { environment } from 'src/environments/environment.prod';
 export class ProdutoComponent implements OnInit {
 
  produto: Produto = new Produto()
+ categoria: Categoria = new Categoria()
  listaCategoria: Categoria[]
- idProduto: number
+ idCateg: number
 
   constructor(
     private produtoService: ProdutoService,
@@ -24,7 +25,7 @@ export class ProdutoComponent implements OnInit {
     private categoriaService: CategoriaService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     if(environment.token == ''){
       this.router.navigate(['/produtos'])
     }
@@ -34,31 +35,15 @@ export class ProdutoComponent implements OnInit {
 
   findByIdProduto(id: number){
     this.produtoService.getByIdProduto(id).subscribe((resp: Produto) =>{this.produto = resp})
+  }
 
-  //findByIdPostagem(id: number){
-   // this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
-     // this.postagem = resp
-   // })
+  atualizar(){
+    this.categoria.id = this.idCateg
+    this.produto.categoria = this.categoria
 
-   //atualizar(){
-//      this.produto.id = this.idProduto
-//     this.produto.categoria = this.categoriaService
-    
-//       this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
-//         alert('Postagem atualizada com sucesso!')
-//       this.router.navigate(['/inicio'])
-//       })
-//     }
-// }
- 
-//atualizar(){
-//  this.tema.id = this.idTema
-  //this.postagem.tema = this.tema
-
-//  this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) =>{
-  //  alert('Postagem atualizada com sucesso!')
-    //this.router.navigate(['/inicio'])
-  //})
-  
-}
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
+      alert('Produto atualizado com sucesso!')
+      this.router.navigate(['/inicio'])
+    })
+  }
 }

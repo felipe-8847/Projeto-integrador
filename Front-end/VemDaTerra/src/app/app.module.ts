@@ -16,13 +16,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { CardProdutoComponent } from './card-produto/card-produto.component';
 import { CadastroCategoriaComponent } from './cadastro-categoria/cadastro-categoria.component';
-<<<<<<< HEAD
-
 import { ProdutoComponent } from './edit/produto/produto.component';
-
-=======
 import { CategoriaComponent } from './edit/categoria/categoria.component';
->>>>>>> 222e9b38a725d5a35a5fb958d710544e8f1b8b7f
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 //import { LoginComponent } from './login/login.component';
 
 
@@ -39,12 +36,11 @@ import { CategoriaComponent } from './edit/categoria/categoria.component';
     CadastroCategoriaComponent,
     CadastroProdutoComponent,
     CardProdutoComponent,
-<<<<<<< HEAD
-     ProdutoComponent,
-    
-=======
-    CategoriaComponent
->>>>>>> 222e9b38a725d5a35a5fb958d710544e8f1b8b7f
+    ProdutoComponent,
+    CategoriaComponent,
+    CategoriaDeleteComponent,
+    ProdutoDeleteComponent
+
   ],
   imports: [
     BrowserModule,
