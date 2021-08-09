@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -34,9 +35,9 @@ export class ProdutoService {
     return this.http.put<Produto[]>('https://vemdaterrabrasil.herokuapp.com/produto', this.token)
   }
 
-  deleteProduto(produto: Produto){
-    return this.http.delete('https://vemdaterrabrasil.herokuapp.com/produto/${id}', this.token)
-    //(https:gabrielapaganini.herokuapp.com/postagens/${id}, this.token)
+  deleteProduto(id: number){
+    return this.http.delete(`https://vemdaterrabrasil.herokuapp.com/produto/${id}`, this.token)
+    
   }
 }
  
