@@ -37,7 +37,7 @@ export class ProdutoComponent implements OnInit {
     this.produtoService.getByIdProduto(id).subscribe((resp: Produto) =>{this.produto = resp})
   }
 
-  atualizar(){
+  atualizarP(){
     this.categoria.id = this.idCateg
     this.produto.categoria = this.categoria
 

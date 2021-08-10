@@ -26,10 +26,10 @@ const routes: Routes = [
   {path: 'cadastro/categoria', component: CadastroCategoriaComponent},
   {path: 'cadastro/produto', component: CadastroProdutoComponent},
   {path: 'produto', component: CardProdutoComponent},
-  {path: 'edit/categoria', component: CategoriaComponent},
-  {path: 'edit/produto', component: ProdutoComponent},
-  {path: 'delete/categoria-delete', component: CategoriaDeleteComponent},
-  {path: 'delete/produto-delete', component: ProdutoDeleteComponent}
+  {path: 'edit/categoria/:id', component: CategoriaComponent},
+  {path: 'edit/produto/:id', component: ProdutoComponent},
+  {path: 'delete/categoria-delete/:id', component: CategoriaDeleteComponent},
+  {path: 'delete/produto-delete/:id', component: ProdutoDeleteComponent}
 ];
 
 @NgModule({
