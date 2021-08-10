@@ -10,18 +10,16 @@
       <div class="col-md-6">
 
         <div class="form-group">
-          <label for="titulo">Título</label>
-          <input [(ngModel)]='categoria.tipo' type="text" class="form-control" id="titulo" placeholder="Digite o título">
+          <label for="tipo">Tipo</label>
+          <input type="text" class="form-control" id="tipo" [(ngModel)]='categoria.tipo' placeholder="Digite o nome">
         </div>
 
-       
-        <div class="d-flex justify-content-center">
-          <button class="btn btn-danger mr-4" routerLink='/inicio'>Cancelar</button>
+        <div class="d-flex justify-content-center mt-2">
+          <button class="btn btn-danger me-4" routerLink='/cadastro/categoria'>Cancelar</button>
           <button class="btn btn-success" (click)='atualizar()'>Atualizar</button>
-          <!--não esta funcionando, atualizar está criando outra categoria-->
         </div>
 
       </div>
     </div>
 
-  </div>
+  </div> 

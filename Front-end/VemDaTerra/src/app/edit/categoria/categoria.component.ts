@@ -19,25 +19,23 @@ export class CategoriaComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
     let id = this.route.snapshot.params['id']
-    this.findByIdTema(id)
+    this.findByIdCategoria(id)
   }
-
-  findByIdTema(id: number){
-    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) =>{
+  findByIdCategoria(id: number){
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
       this.categoria = resp
     })
   }
-
   atualizar(){
-    this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) =>{
+    this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria = resp
       alert('Categoria atualizada com sucesso!')
-      this.router.navigate(['/categoria'])
+      this.router.navigate(['/cadastro/categoria'])
     })
   }
 }

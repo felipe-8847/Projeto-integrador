@@ -79,6 +79,7 @@
               <th scope="col">Descricao</th>
               <th scope="col">Preço</th>
               <th scope="col">Código</th>
+              <th scope="col" class="text-end">Modificações</th>
             </tr>
           </thead>
   
@@ -89,6 +90,9 @@
               <td>{{prod.descricao}}</td>
               <td>{{prod.preco}}</td>
               <td>{{prod.codigo}}</td>
+              <td class="d-flex justify-content-end">
+                <button class="btn btn-info me-3" [routerLink]="['/edit/produto', prod.id]" >Editar</button>
+                <button class="btn btn-danger" [routerLink]="['/delete/produto-delete', prod.id]" >Apagar</button>
             </tr>
           </tbody>
         </table>

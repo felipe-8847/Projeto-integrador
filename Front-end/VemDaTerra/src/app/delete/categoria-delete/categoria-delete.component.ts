@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment.prod';
 export class CategoriaDeleteComponent implements OnInit {
 
   categoria: Categoria = new Categoria()
-  idCateg: number
+  idCategoria: number
 
   constructor(
     private categoriaService: CategoriaService,
@@ -24,22 +24,20 @@ export class CategoriaDeleteComponent implements OnInit {
     if (environment.token == ''){
       this.router.navigate(['/entrar'])
     }
-    this.idCateg = this.route.snapshot.params['id']
-    this.findByIdCategoria(this.idCateg)
+    this.idCategoria = this.route.snapshot.params['id']
+    this.findByIdCategoria(this.idCategoria)
   }
 
   findByIdCategoria(id: number){
     this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) =>{
       this.categoria = resp
+      console.log("categoria "+JSON.stringify(this.categoria))
     })
   }
-
   apagar(){
-    this.categoriaService.deleteCategoria(this.idCateg).subscribe(()=>{
+    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
       alert('Categoria apagada com sucesso!')
-      this.router.navigate(['/Categoria'])
+      this.router.navigate(['/cadastro/categoria'])
     })
   }
-
-
 }

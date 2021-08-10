@@ -38,8 +38,6 @@ export class ProdutoDeleteComponent implements OnInit {
       this.produto = resp
     })
   }
-
-
   apagar(){
     this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
       alert('Produto apagado com sucesso!')
