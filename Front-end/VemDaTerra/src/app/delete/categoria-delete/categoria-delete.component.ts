@@ -5,13 +5,14 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
-  selector: 'app-categoria',
-  templateUrl: './categoria.component.html',
-  styleUrls: ['./categoria.component.css']
+  selector: 'app-categoria-delete',
+  templateUrl: './categoria-delete.component.html',
+  styleUrls: ['./categoria-delete.component.css']
 })
-export class CategoriaComponent implements OnInit {
+export class CategoriaDeleteComponent implements OnInit {
 
   categoria: Categoria = new Categoria()
+  idCategoria: number
 
   constructor(
     private categoriaService: CategoriaService,
@@ -20,21 +21,22 @@ export class CategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(environment.token == ''){
+    if (environment.token == ''){
       this.router.navigate(['/entrar'])
     }
-    let id = this.route.snapshot.params['id']
-    this.findByIdCategoria(id)
+    this.idCategoria = this.route.snapshot.params['id']
+    this.findByIdCategoria(this.idCategoria)
   }
+
   findByIdCategoria(id: number){
-    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) =>{
       this.categoria = resp
+      console.log("categoria "+JSON.stringify(this.categoria))
     })
   }
-  atualizar(){
-    this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria)=>{
-      this.categoria = resp
-      alert('Categoria atualizada com sucesso!')
+  apagar(){
+    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
+      alert('Categoria apagada com sucesso!')
       this.router.navigate(['/cadastro/categoria'])
     })
   }
