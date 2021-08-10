@@ -1,4 +1,3 @@
-  
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
@@ -38,17 +37,13 @@ export class ProdutoComponent implements OnInit {
     this.produtoService.getByIdProduto(id).subscribe((resp: Produto) =>{this.produto = resp})
   }
 
-atualizar(){
-  
-}
+  atualizarP(){
+    this.categoria.id = this.idCateg
+    this.produto.categoria = this.categoria
 
-//  atualizar(){
-  //  this.categoria.id = this.idCateg
-    //this.produto.categoria = this.categoria
-
-    //this.produtoService.putProduto(this.produto).subscribe( (resp: Produto) =>{
-     // alert('Produto atualizado com sucesso!')
-      //this.router.navigate(['/inicio'])
-    //})
-  //}
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
+      alert('Produto atualizado com sucesso!')
+      this.router.navigate(['/inicio'])
+    })
+  }
 }

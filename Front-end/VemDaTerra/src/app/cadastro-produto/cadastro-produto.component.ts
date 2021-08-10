@@ -31,10 +31,10 @@ export class CadastroProdutoComponent implements OnInit {
     })
   }
   cadastrarP(){
-    console.log("usuer " + JSON.stringify(this.produto))
+    console.log("user" + JSON.stringify(this.produto))
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
-      alert('Produto cadastrada com sucesso!!!')
+      alert('Categoria cadastrada com sucesso!!!')
       this.produto = new Produto()
       this.findAllProdutos()
     })

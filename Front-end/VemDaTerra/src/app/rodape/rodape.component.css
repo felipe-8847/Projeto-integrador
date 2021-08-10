@@ -9,7 +9,7 @@ ul.social-network li{
 }
 .fa{
     font-size: 25pt;
-    color: white;
+    color: rgb(8, 8, 8);
     padding: 10px;
 }
 .fa-facebook-square:hover{
