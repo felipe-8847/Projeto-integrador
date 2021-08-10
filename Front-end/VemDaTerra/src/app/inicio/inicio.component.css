@@ -1,4 +1,7 @@
 
+.fb{
+    display: flex;
+}
 .fs10{
     font-size: 19px;
 }
