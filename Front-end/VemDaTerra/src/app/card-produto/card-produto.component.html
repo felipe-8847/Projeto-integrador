@@ -1,86 +1,23 @@
-<div class="row mt-3 d-flex justify-content-center justify-content-around">
-    <div class="card col-md-2 mt-3 mb-4 lg-4 ">
+<div  class="row">
+    <div  *ngFor='let prod of listaProdutos' class="card col-md-3 mt-5 mb-4 lg-4 ">
         <img class="img-produto" src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
-      <div class="card col-md-2 mt-3 mb-4 lg-4">
-        <img src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
-      <div class="card  col-md-2 mt-3 mb-4 lg-4">
-        <img src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
-      <div class="card  col-md-2 mt-3 mb-4 lg-4">
-        <img src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
+          <h5 class="card-title">Produto:  {{prod.nome}}</h5>
+          <p class="card-text">Desc:  {{prod.descricao}}</p>
+          <p class="card-text">Preço:  {{prod.preco}}</p>
 
-      <div class="card  col-md-2 mt-3 mb-4 lg-4">
-        <img src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Comprar</a>
         </div>
       </div>
-
-      <div class="card col-md-2 mt-3 mb-4 lg-4">
-        <img src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
-      <div class="card col-md-2 mt-3 mb-4 lg-4">
-        <img src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
-      <div class="card  col-md-2 mt-3 mb-4 lg-4">
-        <img src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
-      <div class="card  col-md-2 mt-3 mb-4 lg-4">
-        <img src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
-
-      <div class="card  col-md-2 mt-3 mb-4 lg-4">
-        <img src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
-
 </div>
+
+
+<!--<tbody>
+  <tr *ngFor='let prod of listaProdutos'>
+    <th>{{prod.id}}</th>
+    <td>{{prod.nome}}</td>
+    <td>{{prod.descricao}}</td>
+    <td>{{prod.preco}}</td>
+    <td>{{prod.codigo}}</td>
+  </tr>
+</tbody> -->
