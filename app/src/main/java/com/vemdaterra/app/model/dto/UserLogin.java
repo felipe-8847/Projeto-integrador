@@ -1,14 +1,28 @@
 package com.vemdaterra.app.model.dto;
 
+import com.vemdaterra.app.model.TipoDeUsuario;
+
 public class UserLogin {
 
+	private Long id;
+
 	private String nome;
-	
+
 	private String email;
-	
+
 	private String senha;
-	
+
 	private String token;
+
+	private TipoDeUsuario tipo;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -40,6 +54,14 @@ public class UserLogin {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	public TipoDeUsuario getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoDeUsuario tipo) {
+		this.tipo = tipo;
 	}
 
 }
