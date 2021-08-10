@@ -10,15 +10,23 @@ Efetuar Login com chave de Segurança.
 CRUD de categorias de produtos (Acesso permitido apenas aos administradores).
 CRUD de produtos para os produtores que desejam anunciar seus produtos.
 
-#### HEROKU
+### HEROKU
 https://vemdaterrabrasil.herokuapp.com/swagger-ui/
 
-### TUTORIAL PARA MOSTRAR COMO INSTALA O ARQUIVO NO SEU POSTMAN
-https://drive.google.com/file/d/1dqWrmN7sr7zyUdojhAbPFqqEest3xWPN/view?usp=sharing
-
-### LINK DO ARQUIVO DO POSTMAN
+### POSTMAN
 https://www.postman.com/collections/d940ce2064dd355103e0
 
-### LINK DO PROJETO NO TRELLO
+### TRELLO
 https://trello.com/b/Bx4Djmkl/projeto-integrador
+
+### NETLIFY
+https://vemdaterrabrasil.herokuapp.com/swagger-ui/
+
+## 🖥️ Tecnologias Utilizadas 🖥️
+[![mmysqqll Badge](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white&link=https://github.com/felipe-8847/Projeto-integrador)](https://github.com/felipe-8847/Projeto-integrador)
+[![discord Badge](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white&link=https://github.com/felipe-8847/Projeto-integrador)](https://github.com/felipe-8847/Projeto-integrador)
+[![github Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&link=https://github.com/felipe-8847/Projeto-integrador)](https://github.com/felipe-8847/Projeto-integrador)
+[![html Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&link=https://github.com/felipe-8847/Projeto-integrador)](https://github.com/felipe-8847/Projeto-integrador)
+[![github Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&link=https://github.com/felipe-8847/Projeto-integrador)](https://github.com/felipe-8847/Projeto-integrador)
+[![html Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&link=https://github.com/felipe-8847/Projeto-integrador)](https://github.com/felipe-8847/Projeto-integrador)
 
