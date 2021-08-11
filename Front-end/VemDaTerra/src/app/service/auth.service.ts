@@ -24,6 +24,10 @@ export class AuthService {
 
   }
 
+  getByIdUser(id: number): Observable<User>{
+    return this.http.get<User>(`https://vemdaterrabrasil.herokuapp.com/usuario/${id}`)
+  }
+
   logado() {
     let ok: boolean = false
     if (environment.token != '') {

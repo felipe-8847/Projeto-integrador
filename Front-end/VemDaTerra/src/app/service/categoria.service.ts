@@ -23,6 +23,7 @@ export class CategoriaService {
   getByTipoCategoria(tipo: string): Observable<Categoria[]>{
     return this.http.get<Categoria[]>(`https://vemdaterrabrasil.herokuapp.com/categoria/tipo/${tipo}`, this.token)
   }
+  
   postCategoria(categoria: Categoria): Observable<Categoria>{
     return this.http.post<Categoria>('https://vemdaterrabrasil.herokuapp.com/categoria', categoria, this.token)
   }

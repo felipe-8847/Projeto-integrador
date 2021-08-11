@@ -41,13 +41,13 @@
 
                     <div class="form-group mt-3">
                         <label for="categoria">Tipo de categoria</label>
-                        <select class="form-control" name="categoria" id="categoria">
+                        <select class="form-control" name="categoria" id="categoria" [(ngModel)]='idcategoria' (change)='findByIdCategoria()'>
                             <option>Selecione a categoria</option>
 
                             <!-- <option value="PAPELARIA">Papelaria</option>
                             <option value="ALIMENTO">Alimento</option> -->
 
-                            <option *ngFor='let item of listaCategorias'>{{item.tipo}}</option>
+                            <option *ngFor='let item of listaCategorias'  value="{{item.id}}">{{item.tipo}}</option>
                         </select>
                     </div>
 
