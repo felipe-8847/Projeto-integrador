@@ -5,12 +5,14 @@ import { Categoria } from '../model/Categoria';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
-  })
+})
 export class MenuComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
@@ -23,47 +25,52 @@ export class MenuComponent implements OnInit {
     private auth: AuthService,
     private router: Router,
     private categoriaService: CategoriaService
-    
+
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
     this.findAllCategorias()
-  
-  }
-  login(){
-    
-    this.auth.login(this.userLogin).subscribe((resp: UserLogin)=>{
-       this.userLogin = resp
-          
-      localStorage.setItem('email', resp.email);//localstorage é para guardar que o usuario é admin
-     this.localStorageEmail = resp.email
-      localStorage.setItem('tipo', resp.tipo);
-       this.localStorageTipo = resp.tipo
 
-    
+  }
+  login() {
+
+    this.auth.login(this.userLogin).subscribe((resp: UserLogin) => {
+      this.userLogin = resp
+
+      localStorage.setItem('email', resp.email);//localstorage é para guardar que o usuario é admin
+      this.localStorageEmail = resp.email
+      localStorage.setItem('tipo', resp.tipo);
+      this.localStorageTipo = resp.tipo
+
+
       this.router.navigate(['/inicio'])
-    }, erro =>{
-      if(erro.status == 500){
-        alert('Usuário ou senha estão incorretos!')
+    }, erro => {
+      if (erro.status == 500) {
+        /* alert('Usuário ou senha estão incorretos!') funciona */
+        Swal.fire(
+          'Que pena!',
+          'Usuário ou senha estão incorretos!',
+          'error'
+        )
       }
     })
   }
-  sair(){
+  sair() {
     localStorage.removeItem("email")
     this.localStorageEmail = null
 
     localStorage.removeItem("tipoUsuario")
     this.localStorageTipo = null
-   // this.router.navigate(['/entrar'])
-   // environment.token = ''
+    // this.router.navigate(['/entrar'])
+    // environment.token = ''
     //environment.nome = ''
     //environment.id = 0
   }
 
-  findAllCategorias(){
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+  findAllCategorias() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp
     })
   }
