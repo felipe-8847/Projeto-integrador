@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../model/Categoria';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
+import { CategoriaService } from '../service/categoria.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,6 +14,7 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
+  listaCategorias: Categoria[]
   env: any = environment
   localStorageEmail = localStorage.getItem('email')
   localStorageTipo = localStorage.getItem('tipo')
@@ -19,11 +22,14 @@ export class MenuComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private router: Router,
+    private categoriaService: CategoriaService
     
   ) { }
 
   ngOnInit() {
     window.scroll(0,0)
+
+    this.findAllCategorias()
   
   }
   login(){
@@ -54,5 +60,11 @@ export class MenuComponent implements OnInit {
    // environment.token = ''
     //environment.nome = ''
     //environment.id = 0
+  }
+
+  findAllCategorias(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+      this.listaCategorias = resp
+    })
   }
 }

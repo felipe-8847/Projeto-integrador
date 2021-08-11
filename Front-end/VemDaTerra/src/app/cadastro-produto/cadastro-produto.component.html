@@ -43,8 +43,11 @@
                         <label for="categoria">Tipo de categoria</label>
                         <select class="form-control" name="categoria" id="categoria">
                             <option>Selecione a categoria</option>
-                            <option value="PAPELARIA">Papelaria</option>
-                            <option value="ALIMENTO">Alimento</option>
+
+                            <!-- <option value="PAPELARIA">Papelaria</option>
+                            <option value="ALIMENTO">Alimento</option> -->
+
+                            <option *ngFor='let item of listaCategorias'>{{item.tipo}}</option>
                         </select>
                     </div>
 
