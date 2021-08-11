@@ -20,13 +20,16 @@
                 Nossos produtos
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" routerLink='/produto'>Alimentos</a></li>
+
+                <li *ngFor='let item of listaCategorias'><a class="dropdown-item" routerLink='/produto'>{{item.tipo}}</a></li>
+                
+                <!-- <li><a class="dropdown-item" routerLink='/produto'>Alimentos</a></li>
                 <li><a class="dropdown-item" routerLink='/produto'>Cosméticos</a></li>
                 <li><a class="dropdown-item" routerLink='/produto'>Higiene</a></li>
                 <li><a class="dropdown-item" routerLink='/produto'>Vestuário</a></li>
                 <li><a class="dropdown-item" routerLink='/produto'>Papelaria</a></li>
-                <li><a class="dropdown-item" routerLink='/produto'>Mobilia</a></li>
-  
+                <li><a class="dropdown-item" routerLink='/produto'>Mobilia</a></li> -->
+
                 <li>
                   <hr class="dropdown-divider">
                 </li>
