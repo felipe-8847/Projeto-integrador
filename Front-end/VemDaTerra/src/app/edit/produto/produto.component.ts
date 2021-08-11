@@ -38,12 +38,13 @@ export class ProdutoComponent implements OnInit {
   }
 
   atualizarP(){
-    this.categoria.id = this.idCateg
-    this.produto.categoria = this.categoria
+    //this.categoria.id = this.idCateg
+    //this.produto.categoria = this.categoria
 
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
+      this.produto = resp
       alert('Produto atualizado com sucesso!')
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/cadastro/produto'])
     })
   }
 }
