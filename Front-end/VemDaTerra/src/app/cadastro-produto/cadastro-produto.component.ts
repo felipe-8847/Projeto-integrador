@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
+import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -13,10 +15,13 @@ export class CadastroProdutoComponent implements OnInit {
 
   produto: Produto = new Produto()
   listaProdutos: Produto[]
+  listaCategorias: Categoria[]
 
   constructor(
     private router: Router,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService
+
   ) { }
 
   ngOnInit() {
@@ -24,7 +29,10 @@ export class CadastroProdutoComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     this.findAllProdutos()
+    this.findAllCategorias()
   }
+
+  
   findAllProdutos(){
     this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
       this.listaProdutos = resp
@@ -37,6 +45,12 @@ export class CadastroProdutoComponent implements OnInit {
       alert('Produto cadastrado com sucesso!!!')
       this.produto = new Produto()
       this.findAllProdutos()
+    })
+  }
+
+  findAllCategorias(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+      this.listaCategorias = resp
     })
   }
 
