@@ -20,6 +20,7 @@ import { ProdutoComponent } from './edit/produto/produto.component';
 import { CategoriaComponent } from './edit/categoria/categoria.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { AlertasComponent } from './alertas/alertas.component';
 //import { LoginComponent } from './login/login.component';
 
 
@@ -39,7 +40,8 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
     ProdutoComponent,
     CategoriaComponent,
     CategoriaDeleteComponent,
-    ProdutoDeleteComponent
+    ProdutoDeleteComponent,
+    AlertasComponent
 
   ],
   imports: [
