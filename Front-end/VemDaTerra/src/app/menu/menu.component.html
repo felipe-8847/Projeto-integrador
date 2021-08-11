@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fefffd;">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fefffd;">
-  
-      <div class="container-fluid">
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
               <a class="nav-link " routerLink='/inicio' aria-current="page" href="#">Início</a>
             </li>
             <li class="nav-item">
@@ -20,13 +20,16 @@
                 Nossos produtos
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" routerLink='/produto'>Alimentos</a></li>
+
+                <li *ngFor='let item of listaCategorias'><a class="dropdown-item" routerLink='/produto'>{{item.tipo}}</a></li>
+                
+                <!-- <li><a class="dropdown-item" routerLink='/produto'>Alimentos</a></li>
                 <li><a class="dropdown-item" routerLink='/produto'>Cosméticos</a></li>
                 <li><a class="dropdown-item" routerLink='/produto'>Higiene</a></li>
                 <li><a class="dropdown-item" routerLink='/produto'>Vestuário</a></li>
                 <li><a class="dropdown-item" routerLink='/produto'>Papelaria</a></li>
-                <li><a class="dropdown-item" routerLink='/produto'>Mobilia</a></li>
-  
+                <li><a class="dropdown-item" routerLink='/produto'>Mobilia</a></li> -->
+
                 <li>
                   <hr class="dropdown-divider">
                 </li>
@@ -37,7 +40,7 @@
   
               </ul>
             </li>
-
+            
             <li *ngIf="!localStorageEmail" class="nav-item">
               <a class="nav-link" data-bs-toggle="modal" data-bs-target="#login" href="#">Entrar</a>
             </li>
@@ -47,10 +50,13 @@
             </li> 
   
           </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
       </div>
-    </nav>
-  </nav>
+     </nav>
 
 <!--Modal -->
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"

@@ -28,7 +28,7 @@ export class ProdutoService {
     return this.http.post<Produto>('https://vemdaterrabrasil.herokuapp.com/produto', produto, this.token)
   }
   putProduto(produto: Produto): Observable<Produto> {
-    return this.http.put<Produto>('https://vemdaterrabrasil.herokuapp.com/produto', this.token)
+    return this.http.put<Produto>('https://vemdaterrabrasil.herokuapp.com/produto',produto, this.token)
   }
   deleteProduto(id: number) {
     return this.http.delete(`https://vemdaterrabrasil.herokuapp.com/produto/${id}`, this.token)
