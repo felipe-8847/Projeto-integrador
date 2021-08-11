@@ -8,7 +8,26 @@
 .fs-30{
     font-size: 30px;
 }
-
 .nav-item{
     font-weight: bold;
+}
+.nome{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 25px;
+}
+.fa-user-circle-o{
+    font-size: 15pt;
+    padding-right: 3pt;
+}
+.fa-sign-out{
+    font-size: 13pt;
+    padding-left: 3pt;
+}
+.fa-heart-o{
+    font-size: 15pt;
+    padding-right: 5pt;
+}
+.fa-shopping-cart{
+    font-size: 16pt;
+    padding-right: 8pt;
 }
