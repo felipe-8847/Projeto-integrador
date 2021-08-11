@@ -34,7 +34,7 @@ export class CadastroProdutoComponent implements OnInit {
     console.log("user" + JSON.stringify(this.produto))
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
-      alert('Categoria cadastrada com sucesso!!!')
+      alert('Produto cadastrado com sucesso!!!')
       this.produto = new Produto()
       this.findAllProdutos()
     })
