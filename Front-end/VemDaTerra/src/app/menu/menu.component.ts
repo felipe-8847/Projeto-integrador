@@ -32,13 +32,15 @@ export class MenuComponent implements OnInit {
     window.scroll(0, 0)
 
     this.findAllCategorias()
-
+    localStorage.setItem('tipo', "");
+  
   }
+
   login() {
 
     this.auth.login(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
-
+      environment.id = this.userLogin.id
       localStorage.setItem('email', resp.email);//localstorage é para guardar que o usuario é admin
       this.localStorageEmail = resp.email
       localStorage.setItem('tipo', resp.tipo);
@@ -57,16 +59,25 @@ export class MenuComponent implements OnInit {
       }
     })
   }
+
   sair() {
+
+    localStorage.setItem('tipo', "");
+
     localStorage.removeItem("email")
+
     this.localStorageEmail = null
 
     localStorage.removeItem("tipoUsuario")
     this.localStorageTipo = null
-    // this.router.navigate(['/entrar'])
-    // environment.token = ''
+
+
+
+   // this.router.navigate(['/entrar'])
+   // environment.token = ''
     //environment.nome = ''
     //environment.id = 0
+
   }
 
   findAllCategorias() {

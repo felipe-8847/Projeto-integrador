@@ -40,24 +40,19 @@
                                 placeholder="Seu link da sua foto">
                         </div>
 
-                        <div class="form-group mt-3">
-                            <label for="categoria">Tipo de categoria</label>
-                            <select class="form-control" name="categoria" id="categoria">
-                                <option>Selecione a categoria</option>
-
-                                <!-- <option value="PAPELARIA">Papelaria</option>
-                                <option value="ALIMENTO">Alimento</option> -->
-
-                                <option *ngFor='let item of listaCategorias'>{{item.tipo}}</option>
-                            </select>
-                        </div>
+                    <div class="form-group mt-3">
+                        <label for="categoria">Tipo de categoria</label>
+                        <select class="form-control" name="categoria" id="categoria" [(ngModel)]='idcategoria' (change)='findByIdCategoria()'>
+                            <option>Selecione a categoria</option>
+                            <option *ngFor='let item of listaCategorias'  value="{{item.id}}">{{item.tipo}}</option>
+                        </select>
+                    </div>
 
                         <div class="d-flex justify-content-center mt-3">
                             <button type="submit" class="btn btn-danger me-3 cancelar"
                                 routerLink='/inicio'>Cancelar</button>
                             <button type="submit" class="btn btn-success" (click)='cadastrarP()'>Cadastrar</button>
                         </div>
-
                     </div>
                 </div>
             </div>
