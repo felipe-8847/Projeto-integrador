@@ -21,3 +21,27 @@ align-items: center;
 
 }
 
+.about-list{
+    list-style: none;
+    display: inline;
+}
+
+.num1{
+    color: rgb(238, 132, 32);
+    font-size: 40px;
+}
+
+.num2{
+    color: rgb(14, 192, 38);
+    font-size: 40px;
+}
+
+.num3{
+    color: rgb(229, 255, 0);
+    font-size: 40px;
+}
+
+.num4{
+    color: rgb(0, 60, 255);
+    font-size: 40px;
+}
