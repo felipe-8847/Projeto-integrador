@@ -25,6 +25,7 @@ export class CadastroCategoriaComponent implements OnInit {
     }
     this.findAllCategorias()
   }
+  
   findAllCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
       this.listaCategorias = resp

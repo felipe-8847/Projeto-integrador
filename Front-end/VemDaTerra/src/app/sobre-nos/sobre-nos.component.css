@@ -21,3 +21,67 @@ align-items: center;
 
 }
 
+.about-list{
+    list-style: none;
+    display: inline;
+}
+
+.num1{
+    color: rgb(238, 132, 32);
+    font-size: 40px;
+}
+
+.num2{
+    color: rgb(14, 192, 38);
+    font-size: 40px;
+}
+
+.num3{
+    color: rgb(229, 255, 0);
+    font-size: 40px;
+}
+
+.num4{
+    color: rgb(0, 60, 255);
+    font-size: 40px;
+}
+
+.bg{
+    background-color: #ffffb6;
+}
+
+.about-list{
+    align-items: center;
+}
+
+.data-area{
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.nos{
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.zoom {
+    overflow: hidden;
+}
+
+.zoom img {
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.img{
+    width: 410px;
+    height: 415px;
+}
