@@ -21,6 +21,8 @@ import { CategoriaComponent } from './edit/categoria/categoria.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { CardCategoriaComponent } from './card-categoria/card-categoria.component';
+import { CarrinhoDeComprasComponent } from './carrinho-de-compras/carrinho-de-compras.component';
 //import { LoginComponent } from './login/login.component';
 
 
@@ -41,7 +43,9 @@ import { AlertasComponent } from './alertas/alertas.component';
     CategoriaComponent,
     CategoriaDeleteComponent,
     ProdutoDeleteComponent,
-    AlertasComponent
+    AlertasComponent,
+    CardCategoriaComponent,
+    CarrinhoDeComprasComponent
 
   ],
   imports: [
