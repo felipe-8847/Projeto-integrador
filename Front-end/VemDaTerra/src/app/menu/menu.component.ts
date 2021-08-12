@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit {
 
     this.findAllCategorias()
     localStorage.setItem('tipo', "");
-  
+
   }
 
   login() {
@@ -45,14 +45,18 @@ export class MenuComponent implements OnInit {
       this.localStorageEmail = resp.email
       localStorage.setItem('tipo', resp.tipo);
       this.localStorageTipo = resp.tipo
-
+      Swal.fire(
+        'Seja Bem-Vinde!',
+        'Sua eco-experiência começa aqui!!!',
+        'success'
+      )
 
       this.router.navigate(['/inicio'])
     }, erro => {
       if (erro.status == 500) {
         /* alert('Usuário ou senha estão incorretos!') funciona */
         Swal.fire(
-          'Que pena!',
+          'Oops!',
           'Usuário ou senha estão incorretos!',
           'error'
         )
@@ -73,11 +77,15 @@ export class MenuComponent implements OnInit {
 
 
 
-   // this.router.navigate(['/entrar'])
-   // environment.token = ''
+    // this.router.navigate(['/entrar'])
+    // environment.token = ''
     //environment.nome = ''
     //environment.id = 0
-
+    Swal.fire(
+      'Já vai?!',
+      'Vou ficar com saudades!!!',
+      'question'
+    )
   }
 
   findAllCategorias() {
