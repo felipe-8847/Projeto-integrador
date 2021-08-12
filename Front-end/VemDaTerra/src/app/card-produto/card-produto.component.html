@@ -1,23 +1,18 @@
 <div  class="row">
-    <div  *ngFor='let prod of listaProdutos' class="card col-md-3 mt-5 mb-4 lg-4 ">
-        <img class="img-produto" src="../../assets/img/th6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Produto:  {{prod.nome}}</h5>
-          <p class="card-text">Desc:  {{prod.descricao}}</p>
-          <p class="card-text">Preço:  {{prod.preco}}</p>
-
-          <a href="#" class="btn btn-primary">Comprar</a>
+  <div  *ngFor='let prod of listaProdutos' class="card col-md-3 mt-5 mb-2 lg-2 pt-2">
+      <div class="zoom">
+        <img class="img-produto img-responsive" src="{{prod.url}}"  class="card-img-top img" alt="imagem do produto">
+      </div>
+    
+      <div class="card-body ">
+        <div class="text-item">
+          <h3 class="card-title">{{prod.nome}}</h3>
+        </div>
+        <h6 class="card-text preco">R$ {{prod.preco}}</h6>
+        <p class="card-text">{{prod.descricao}}</p>
+        <div class=" d-flex justify-content-center">
+        <a href="#" class="btn btn-success ">Comprar</a>
         </div>
       </div>
+    </div>
 </div>
-
-
-<!--<tbody>
-  <tr *ngFor='let prod of listaProdutos'>
-    <th>{{prod.id}}</th>
-    <td>{{prod.nome}}</td>
-    <td>{{prod.descricao}}</td>
-    <td>{{prod.preco}}</td>
-    <td>{{prod.codigo}}</td>
-  </tr>
-</tbody> -->

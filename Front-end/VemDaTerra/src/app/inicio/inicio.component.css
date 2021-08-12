@@ -13,6 +13,18 @@
 .fundo2{
     background-color: #d8efdd;
 }
+.fs10{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.fs-54{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.fs-54-b{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    
+}
 
 .centro{
     display: block; 
@@ -25,10 +37,14 @@
 }
 
 .imgcard{
-    height: 200px;
-    width: 320px;
+    height: 150px;
+    width: 180px;
 }
 
 .preco{
     color: #019e43;
+}
+
+.p-3{
+    margin-left: 4;
 }

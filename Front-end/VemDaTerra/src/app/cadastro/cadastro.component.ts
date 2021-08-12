@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro',
@@ -36,12 +38,22 @@ export class CadastroComponent implements OnInit {
     console.log("user " + JSON.stringify(this.user))
     this.user.tipo = this.tipo
     if (this.user.senha != this.confirmarSenha) {
-      alert("Senha não correspondente")
+      /* alert("Senha não correspondente") funciona */
+      Swal.fire(
+        'Ops!',
+        'Senha não correspondente',
+        'error'
+      )
     } else {
       this.authService.cadastro(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/login'])
-        alert("Cadastrado com sucesso")
+        /* alert("Cadastrado com sucesso") funciona */
+        Swal.fire(
+          'Parabéns',
+          'Cadastrado com sucesso',
+          'success'
+        )
       })
     }
   }
