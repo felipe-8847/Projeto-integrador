@@ -22,6 +22,7 @@ export class CadastroProdutoComponent implements OnInit {
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
   idcategoria: number
+  ok: boolean = false
 
 
   user: User = new User()
@@ -92,6 +93,20 @@ export class CadastroProdutoComponent implements OnInit {
     this.categoriaService.getByIdCategoria(this.idcategoria).subscribe((resp: Categoria) =>{
       this.categoria = resp
     })
+  }
+
+  compararId(){
+    
+    if (environment.id != this.produto.usuario.id){
+      console.log("Env:"+environment.id + "Pro:"+this.produto.usuario.id)
+      return this.ok
+
+    }else{
+      
+      return this.ok = true
+    }
+
+   
   }
 
 }

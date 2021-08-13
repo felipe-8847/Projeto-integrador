@@ -14,6 +14,8 @@ export class ProdutoDeleteComponent implements OnInit {
   produto: Produto = new Produto()
   idProd: number
 
+  ok: boolean = false
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -38,11 +40,29 @@ export class ProdutoDeleteComponent implements OnInit {
       this.produto = resp
     })
   }
+
   apagar(){
-    this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
-      alert('Produto apagado com sucesso!')
-      this.router.navigate(['/cadastro/produto'])
+          this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
+            alert('Produto apagado com sucesso!')
+            this.router.navigate(['/cadastro/produto'])
+        
     })
   }
+
+
+  //   apagar(){
+
+//     if (environment.id != this.produto.usuario.id){
+
+//       console.log("Env:"+environment.id + "Pro:"+this.produto.usuario.id)
+//       alert('Produto não pode ser apagado!')
+
+//     }else {
+//       this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
+//         alert('Produto apagado com sucesso!')
+//         this.router.navigate(['/cadastro/produto'])
+//     }
+// })
+// }
 
 }
