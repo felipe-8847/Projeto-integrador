@@ -82,8 +82,8 @@
                 </tr>
               </thead>
       
-              <tbody>
-                <tr *ngFor='let prod of listaProdutos'>
+              <tbody *ngFor='let prod of listaProdutos'>
+                <tr *ngIf="prod.usuario.id == idUser">
                   <th>{{prod.id}}</th>
                   <td>{{prod.nome}}</td>
                   <td>{{prod.descricao}}</td>
