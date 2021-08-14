@@ -68,7 +68,7 @@ export class MenuComponent implements OnInit {
 
     this.localStorageEmail = null
 
-    localStorage.removeItem("tipoUsuario")
+    localStorage.removeItem("tipo")
     this.localStorageTipo = null
 
 

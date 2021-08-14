@@ -10,6 +10,7 @@ import { ProdutoService } from '../service/produto.service';
 export class CardCategoriaComponent implements OnInit {
 
   listaProdutos: Produto[]
+  listaProdutoPorCategoria: Produto[]
 
   constructor(
     private produtoService: ProdutoService
@@ -25,5 +26,9 @@ export class CardCategoriaComponent implements OnInit {
     this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
       this.listaProdutos = resp
     })
+  }
+
+  separarCategorias(){
+    
   }
 }
