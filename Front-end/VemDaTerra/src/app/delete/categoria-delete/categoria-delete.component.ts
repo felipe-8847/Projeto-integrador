@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-categoria-delete',
@@ -36,8 +37,24 @@ export class CategoriaDeleteComponent implements OnInit {
   }
   apagar(){
     this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
-      alert('Categoria apagada com sucesso!')
       this.router.navigate(['/cadastro/categoria'])
+      Swal.fire({
+        title: 'Você tem certeza?',
+        text: "Não será possível reverter isso!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim, tenho certeza'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deletado!',
+            'Sua Categoria foi deletada',
+            'success'
+          )
+        }
+      })
     })
   }
 }

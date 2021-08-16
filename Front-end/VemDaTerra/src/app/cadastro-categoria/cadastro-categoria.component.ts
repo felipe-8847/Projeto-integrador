@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro-categoria',
@@ -34,7 +35,7 @@ export class CadastroCategoriaComponent implements OnInit {
   cadastrar(){
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria = resp
-      alert('Categoria cadastrada com sucesso!!!')
+      Swal.fire('Categoria Cadastrada com Sucesso!!')
       this.categoria = new Categoria()
       this.findAllCategorias()
     })
