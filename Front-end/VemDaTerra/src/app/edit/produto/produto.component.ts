@@ -5,6 +5,7 @@ import { Produto } from 'src/app/model/Produto';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-produto',
@@ -43,7 +44,7 @@ export class ProdutoComponent implements OnInit {
 
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto) =>{
       this.produto = resp
-      alert('Produto atualizado com sucesso!')
+      Swal.fire('Produto Atualizado com sucesso')
       this.router.navigate(['/cadastro/produto'])
     })
   }
