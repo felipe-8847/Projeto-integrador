@@ -7,6 +7,9 @@ import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 // ES6 Modules or TypeScript
 import Swal from 'sweetalert2';
+import { Produto } from '../model/Produto';
+import { ProdutoService } from '../service/produto.service';
+import { User } from '../model/User';
 
 @Component({
   selector: 'app-menu',
@@ -17,14 +20,24 @@ export class MenuComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
   listaCategorias: Categoria[]
+  listaProdutos: Produto[]
+
+  user: User = new User()
+  idUser = environment.id
+
   env: any = environment
   localStorageEmail = localStorage.getItem('email')
   localStorageTipo = localStorage.getItem('tipo')
+  tituloPost: string
+
 
   constructor(
     private auth: AuthService,
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private produtoService: ProdutoService
+
+
 
   ) { }
 
@@ -85,4 +98,22 @@ export class MenuComponent implements OnInit {
       this.listaCategorias = resp
     })
   }
+
+  findBycategoria(){
+
+  }
+
+  findByIdUser(){
+    this.auth.getByIdUser(this.idUser).subscribe((resp: User) => {
+      this.user = resp
+    })
+  }
+  
+  getAllProduto(){
+    this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+    })
+  }
+
+
 }

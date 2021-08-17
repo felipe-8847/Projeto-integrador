@@ -17,6 +17,9 @@ export class CadastroProdutoComponent implements OnInit {
 
   produto: Produto = new Produto()
   listaProdutos: Produto[]
+  listaProdutosDeUser: Produto[]
+  x: Produto
+
 
 
   categoria: Categoria = new Categoria()
@@ -48,8 +51,20 @@ export class CadastroProdutoComponent implements OnInit {
   findAllProdutos(){
     this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
       this.listaProdutos = resp
+      console.log(" teste "+ this.listaProdutos)
+
+
+      for (var x in this.listaProdutos) {
+
+        if (environment.id == this.x.usuario.id){
+          this.listaProdutosDeUser.push(this.x)
+          console.log("lista"+this.listaProdutosDeUser+ " teste "+ this.listaProdutos)
+        }
+      }
     })
   }
+  
+
   cadastrarP(){
 
     let usuario: User = new User()
@@ -65,11 +80,11 @@ export class CadastroProdutoComponent implements OnInit {
      this.user.id = this.idUser
      this.produto.usuario = this.user
 
-
-    console.log("user" + JSON.stringify(this.produto))
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
       alert('Produto cadastrado com sucesso!!!')
+      console.log("lista "+this.listaProdutosDeUser)
+
       this.produto = new Produto()
       this.findAllProdutos()
     })

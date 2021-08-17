@@ -1,5 +1,5 @@
 <div  class="row">
-    <div  *ngFor='let prod of listaProdutos'  class="card col-md-3 mt-5 mb-2 lg-2 pt-2">
+    <div  *ngFor='let prod of user.produto'  class="card col-md-3 mt-5 mb-2 lg-2 pt-2">
         <div class="zoom">
           <img class="img-produto img-responsive" src="{{prod.url}}"  class="card-img-top img" alt="imagem do produto">
         </div>
@@ -15,4 +15,4 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>

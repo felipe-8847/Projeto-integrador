@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
+import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
+import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -9,11 +14,16 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class CardCategoriaComponent implements OnInit {
 
-  listaProdutos: Produto[]
+  listaProdutos: Categoria[]
   listaProdutoPorCategoria: Produto[]
 
+  user: User = new User()
+  idUser = environment.id
+
   constructor(
-    private produtoService: ProdutoService
+    private categoriaService: CategoriaService,
+    private auth: AuthService
+
 
   ) { }
 
@@ -23,12 +33,27 @@ export class CardCategoriaComponent implements OnInit {
   }
 
   findAllProdutos(){
-    this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
       this.listaProdutos = resp
     })
   }
 
-  separarCategorias(){
-    
+  findByIdUser(){
+    this.auth.getByIdUser(this.idUser).subscribe((resp: User) => {
+      this.user = resp
+    })
   }
+
+  getAllTemas(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaProdutos = resp
+    })
+  }
+
+  // findByIdTema(){
+  //   this.categoriaService.getByIdCategoria(this.idproduto).subscribe((resp: Categoria) =>{
+  //     this.categoria = resp
+  //   })
+  // }
+
 }

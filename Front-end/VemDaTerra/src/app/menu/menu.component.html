@@ -29,7 +29,8 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                <li *ngFor='let item of listaCategorias'><a class="dropdown-item" routerLink='/produto'>{{item.tipo}}</a></li>
+                <li *ngFor='let item of listaCategorias'><a class="dropdown-item" routerLink='/card/categoria' (click)='findByIdUser()'>{{item.tipo}}</a></li>
+                
                 
                 <!-- <li><a class="dropdown-item" routerLink='/produto'>Alimentos</a></li>
                 <li><a class="dropdown-item" routerLink='/produto'>Cosméticos</a></li>

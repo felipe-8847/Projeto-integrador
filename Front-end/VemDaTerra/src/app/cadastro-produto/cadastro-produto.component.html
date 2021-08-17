@@ -82,8 +82,9 @@
                 </tr>
               </thead>
       
-              <tbody *ngFor='let prod of listaProdutos'>
-                <tr *ngIf="prod.usuario.id == idUser">
+              <tbody>
+                <ng-container *ngFor="let prod of listaProdutos">
+                <tr>
                   <th>{{prod.id}}</th>
                   <td>{{prod.nome}}</td>
                   <td>{{prod.descricao}}</td>
@@ -94,6 +95,7 @@
                     <button class="btn btn-danger" [routerLink]="['/delete/produto-delete', prod.id]" >Apagar</button>
                   
                 </tr>
+              </ng-container> 
               </tbody>
             </table>
       
