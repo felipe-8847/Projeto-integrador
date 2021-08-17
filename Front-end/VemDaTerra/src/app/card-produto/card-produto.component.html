@@ -1,19 +1,19 @@
 <div class="container-fluid">
-<div class="row d-flex">
-  <div  *ngFor='let prod of listaProdutos' class="card col-md-3 mt-5 mb-2 lg-2 pt-2">
-      <div class="zoom">
-        <img class="img-produto img-responsive" src="{{prod.url}}"  class="card-img-top img" alt="imagem do produto">
-      </div>
-    
-      <div class="card-body ">
-        <div class="text-item">
-          <h3 class="card-title">{{prod.nome}}</h3>
-        </div>
-        <h6 class="card-text preco">R$ {{prod.preco}}</h6>
-        <p class="card-text">{{prod.descricao}}</p>
-        <div class=" d-flex justify-content-center">
-        <a href="#" class="btn btn-success ">Comprar</a>
+<div class="row d-flex bg-light"> 
+  <div *ngFor='let prod of listaProdutos' class="card col-md-3 mt-5 mb-2 lg-2 pt-2">
+          <div class="zoom">
+            <img class="img-produto img-responsive" src="{{prod.url}}" class="card-img-top img" alt="imagem do produto">
+          </div>
+          <div class="card-body">
+            <div class="text-item">
+              <h3 class="card-title">{{prod.nome}}</h3>
+            </div>
+            <h6 class="card-text preco">R$ {{prod.preco}}</h6>
+            <p class="card-text">{{prod.descricao}}</p>
+            <div class="d-flex justify-content-center">
+              <a href="#" class="btn btn-outline-success">Comprar</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-</div>

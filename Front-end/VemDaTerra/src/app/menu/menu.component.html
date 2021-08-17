@@ -5,17 +5,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav d-flex logo">
-        <li class="nav-logo nome">
-         <img src="https://i.imgur.com/f6ba3pA.png?2" alt="Imagem do Logo" width="65px" height="65px">
-        </li>
-        <li class="nav-item nome mt-3">
-          Vem da Terra
-        </li>
+        <a class="nav-link nome text-black" routerLink='/inicio'>
+         <img src="https://i.imgur.com/f6ba3pA.png?2" alt="Imagem do Logo" width="65px" height="65px">Vem da Terra</a>
       </ul>
-      <ul class="navbar-nav col-md-5 m-auto d-flex">
-        <li class="nav-item">
-              <a class="nav-link" routerLink='/inicio' aria-current="page" href="#">Início</a>
-            </li>
+      <ul class="navbar-nav col-md-3 m-auto d-flex">
             <li class="nav-item">
               <a class="nav-link" routerLink='/sobre' aria-current="page" href="#">Sobre Nós</a>
             </li>
@@ -48,21 +41,22 @@
   
               </ul>
             </li>
-            <li *ngIf="!localStorageEmail" class="nav-item">
+          </ul>
+
+          <ul class="navbar-nav d-flex align-items-center">
+          <li class="nav-item">
+            <a class="nav-link"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          </li>
+
+            <li *ngIf="!localStorageEmail" class="nav-item pl">
               <a class="nav-link" data-bs-toggle="modal" data-bs-target="#login" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Entre</a>
             </li>
   
             <li *ngIf="localStorageEmail" class="nav-item">
               <a class="nav-link" routerLink='/inicio' (click)='sair()'>Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
-            </li>
-          </ul>
-
-          <ul class="navbar-nav d-flex align-items-center">
-            <li class="nav-item">
-              <a class="nav-link"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </li>
           </ul>
           
@@ -94,8 +88,8 @@
 
           </div>
           <div class="modal-footer d-flex justify-content-center my-2">
-            <button type="button" class="btn btn-danger me-3" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)='login()'>Entrar</button>
+            <button type="button" class="btn btn-outline-danger me-3" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" (click)='login()'>Entrar</button>
           </div>
           <div class="text-center" data-bs-dismiss="modal">Não tem uma conta? <a routerLink='/cadastro'>Cadastre-se</a>
           </div>

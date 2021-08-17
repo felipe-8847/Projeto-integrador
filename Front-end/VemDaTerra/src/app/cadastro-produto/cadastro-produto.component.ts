@@ -7,6 +7,7 @@ import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -68,7 +69,7 @@ export class CadastroProdutoComponent implements OnInit {
     console.log("user" + JSON.stringify(this.produto))
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
-      alert('Produto cadastrado com sucesso!!!')
+      Swal.fire('Produto Cadastrado com Sucesso!!')
       this.produto = new Produto()
       this.findAllProdutos()
     })
