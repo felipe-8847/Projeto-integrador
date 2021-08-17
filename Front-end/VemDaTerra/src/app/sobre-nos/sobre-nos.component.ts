@@ -36,7 +36,7 @@ export class SobreNosComponent implements OnInit {
   clientescountstop: any = setInterval(() => {
     this.clientescount++;
 
-    if(this.clientescount ==1785){
+    if(this.clientescount ==785){
       clearInterval(this.clientescountstop);
     }
   },10)

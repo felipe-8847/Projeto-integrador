@@ -1,5 +1,5 @@
 .img{
-    width: 386px;
+    width: 300px;
     height: 180px;
 }
 
@@ -30,4 +30,8 @@
 	z-index: 10;
 	color: #201e1e;
 	font-weight: 700;
+}
+.card{
+	margin-left: 20px;
+	width: 300px;
 }
