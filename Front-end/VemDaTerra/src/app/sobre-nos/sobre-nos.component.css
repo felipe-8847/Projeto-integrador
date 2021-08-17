@@ -9,6 +9,7 @@
 }
 .col-md-5{
     align-items: center;
+    
 }
 .br-50 {
     border-radius: 3%;
@@ -84,4 +85,28 @@ align-items: center;
 .img{
     width: 410px;
     height: 415px;
+}
+.pl{
+    padding-left: 5rem;
+}
+.pl4{
+    padding-right: 3rem;
+}
+ul.social-network{
+    list-style: none;
+    padding-left: 5px;
+}
+.fa{
+    font-size: 25pt;
+    color: rgb(8, 8, 8);
+    padding: 10px;
+}
+.fa-linkedin-square:hover{
+    color: #0189d3;
+}
+.fa-github:hover{
+    color:rgb(135, 131, 139);
+}
+.card{
+    margin-left: 15px;
 }
