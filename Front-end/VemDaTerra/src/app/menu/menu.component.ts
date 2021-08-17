@@ -45,6 +45,7 @@ export class MenuComponent implements OnInit {
     window.scroll(0, 0)
 
     this.findAllCategorias()
+    this.getAllProduto()
     localStorage.setItem('tipo', "");
   
   }
