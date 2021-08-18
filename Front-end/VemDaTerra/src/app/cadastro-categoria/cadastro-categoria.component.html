@@ -16,7 +16,7 @@
           </div>
 
           <div class="d-flex justify-content-center mt-3 mb-5">
-            <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
+            <button type="submit" class="btn btn-outline-success" (click)='cadastrar()'>Cadastrar</button>
           </div>
         </div>
       </div>
@@ -47,8 +47,8 @@
             <th>{{item.id}}</th>
             <td>{{item.tipo}}</td>
             <td class="d-flex justify-content-end">
-              <button class="btn btn-info me-3" [routerLink]="['/edit/categoria', item.id]">Editar</button>
-              <button class="btn btn-danger" [routerLink]="['/delete/categoria-delete', item.id]">Apagar</button>
+              <button class="btn btn-outline-info me-3" [routerLink]="['/edit/categoria', item.id]">Editar</button>
+              <button class="btn btn-outline-danger" [routerLink]="['/delete/categoria-delete', item.id]">Apagar</button>
             </td>
           </tr>
         </tbody>

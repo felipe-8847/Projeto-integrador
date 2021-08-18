@@ -46,22 +46,21 @@
 <div class="data-area">
 
     <div class="container-fluid">
-        <div class="row d-flex">
-            <div class="col-md-3">
-                <h2 class="num1 align-itens-center">{{projectcount}}</h2>
+        <div class="row-cols-md-4 d-flex text-center">
+            <div class="pl">
+                <h2 class="num1">{{projectcount}}</h2>
                 <p>Cooperativas Parceiras</p>
             </div>
-
-            <div class="col-md-3">
-                <h2 class="num2 align-itens-center">{{vendedorescount}}</h2>
-                <p>Vendedores Cadastrados</p>
+            <div class="pl">
+                <h2 class="num2">{{vendedorescount}}</h2>
+                <p>Vendas Realizadas</p>
             </div>
-            <div class="col-md-3 cicle-box">
-                <h2 class="num3 align-itens-center">{{clientescount}}</h2>
+            <div class="pl">
+                <h2 class="num3">{{clientescount}}</h2>
                 <p>Clientes Felizes</p>
             </div>
-            <div class="col-md-3 cicle-box">
-                <h2 class="num4 align-itens-center">{{horascount}}</h2>
+            <div class="pl4">
+                <h2 class="num4">{{horascount}}</h2>
                 <p>Horas de código</p>
             </div>
         </div>
@@ -70,24 +69,25 @@
 
 <!--Fim dos dados-->
 <div class="container-fluid">
-<div class="row d-flex align-items-center">
+    <div class="row d-flex align-items-center">
 
-    <div class="row-cols-md-4 g-0 bg-gradient d-flex justify-content-center">
+        <div class="row-cols-md-4 g-0 bg-gradient d-flex justify-content-center">
 
-        <div class="row col-md-5">
-            <h1 class="mb-5">Você ajuda o planeta e ainda recebe desconto nos produtos Vem da Terra!</h1>
-            <p>
-                Você pode levar seu lixo reciclável até um de nossos postos de colheita em diversos lugares de São
-                Paulo! Lá, nosso time de Agentes Transformadores irá pesar os materiais e te dar um vale pontos! Os
-                pontos poderão ser trocados por cupons de até 20% de desconto!
-            </p>
+            <div class="row col-md-5">
+                <h1 class="mb-5">Você ajuda o planeta e ainda recebe desconto nos produtos Vem da Terra!</h1>
+                <p>
+                    Você pode levar seu lixo reciclável até um de nossos postos de colheita em diversos lugares de São
+                    Paulo! Lá, nosso time de Agentes Transformadores irá pesar os materiais e te dar um vale pontos! Os
+                    pontos poderão ser trocados por cupons de até 20% de desconto!
+                </p>
+            </div>
+            <div class="col-md-5 me-15 justify-content-end">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117067.04403223135!2d-46.5871765091829!3d-23.52008619041996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce61a59f0469b3%3A0x29401a8e13e1d917!2sRainha%20Da%20Reciclagem!5e0!3m2!1spt-BR!2sbr!4v1628642061400!5m2!1spt-BR!2sbr"
+                    width="500" height="400" style="border: 10px;;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
         </div>
-        <div class="col-md-5 me-15 justify-content-end">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117067.04403223135!2d-46.5871765091829!3d-23.52008619041996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce61a59f0469b3%3A0x29401a8e13e1d917!2sRainha%20Da%20Reciclagem!5e0!3m2!1spt-BR!2sbr!4v1628642061400!5m2!1spt-BR!2sbr"
-                width="500" height="400" style="border: 10px;;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-
     </div>
 </div>
 
@@ -101,25 +101,57 @@
             <!-- <div  class="row"> -->
             <div class="card">
                 <div class="zoom">
-                    <a href="https://github.com/buchevitss" target="_blank"><img class="img-produto img-responsive" src='https://i.imgur.com/obFzKKH.png' class="card-img-top img" alt="imagem do produto"></a>
+                    <img class="img-produto img-responsive" src='https://i.imgur.com/obFzKKH.png'
+                        class="card-img-top img" alt="imagem do produto">
                     <h2 class="text-center">Thais Buchweitz</h2>
+                    <ul class="social-network text-center">
+
+                        <a href="https://github.com/buchevitss" target="_blank" class="iconFacebook">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/thais-buchweitz/" target="_blank" class="iconLinkedin">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </ul>
                 </div>
             </div>
 
             <!-- <div  class="row">  -->
             <div class="card">
                 <div class="zoom">
-                    <a href="https://github.com/Bss97" target="_blank"><img class="img-produto img-responsive" src='https://i.imgur.com/PctaDQC.png'
-                        class="card-img-top img" alt="imagem do produto"></a>
+                    <img class="img-produto img-responsive" src='https://i.imgur.com/PctaDQC.png'
+                        class="card-img-top img" alt="imagem do produto">
                     <h2 class="text-center">Bryan Santos</h2>
+                    <ul class="social-network text-center">
+
+                        <a href="https://github.com/Bss97" target="_blank" class="iconFacebook">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/bryasan/" target="_blank" class="iconLinkedin">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </ul>
                 </div>
             </div>
             <!-- </div>
                   <div  class="row"> -->
             <div class="card">
                 <div class="zoom">
-                    <a href="https://github.com/gabrielaPaganini" target="_blank"><img class="img-produto img-responsive" src='https://i.imgur.com/dtaZ2K1.png'ass="card-img-top img" alt="imagem do produto"></a>
+                    <img class="img-produto img-responsive" src='https://i.imgur.com/dtaZ2K1.png'
+                    class="card-img-top img" alt="imagem do produto">
                     <h2 class="text-center">Ana Gabriela</h2>
+                    <ul class="social-network text-center">
+
+                        <a href="https://github.com/gabrielaPaganini" target="_blank" class="iconFacebook">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/ag-paganini/" target="_blank" class="iconLinkedin">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -127,33 +159,68 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row-cols-md-4 g-0 bg-light p-3 d-flex justify-content-center">
+    <div class="row d-flex align-items-center">
+        <div class="row-cols-md-4 g-0 bg-light d-flex justify-content-center">
 
-        <!-- <div  class="row"> -->
-        <div class="card">
-            <div class="zoom">
-                <a href="https://github.com/Mara-Jozicleia" target="_blank"><img class="img-produto img-responsive" src='https://i.imgur.com/8SfVCAC.png' class="card-img-top img"></a>
-                <h2 class="text-center">Mara Jozicléa</h2>
+            <!-- <div  class="row"> -->
+            <div class="card">
+                <div class="zoom">
+                    <img class="img-produto img-responsive" src='https://i.imgur.com/8SfVCAC.png'
+                        class="card-img-top img">
+                    <h2 class="text-center">Mara Jozicléa</h2>
+                    <ul class="social-network text-center">
+
+                        <a href="https://github.com/Mara-Jozicleia" target="_blank" class="iconFacebook">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/mara-jozicleia/" target="_blank" class="iconLinkedin">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <!-- </div> -->
+            <!-- <div  class="row"> -->
+            <div class="card">
+                <div class="zoom">
+                    <img class="img-produto img-responsive" src='https://i.imgur.com/r5L3Rk5.png'
+                        class="card-img-top img" alt="imagem do produto">
+                    <h2 class="text-center">Mabiá</h2>
+                    <ul class="social-network text-center">
+
+                        <a href="https://github.com/prisciladuarte" target="_blank" class="iconFacebook">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/prisciladuarte1993/" target="_blank" class="iconLinkedin">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <!-- </div> -->
+            <!-- <div  class="row"> -->
+            <div class="card">
+                <div class="zoom">
+                    <img class="img-produto img-responsive" src='https://i.imgur.com/4JfTRho.png'
+                        class="card-img-top img" alt="imagem do produto">
+                    <h2 class="text-center">Felipe Alves</h2>
+                    <ul class="social-network text-center">
+
+                        <a href="https://github.com/felipe-8847" target="_blank" class="iconFacebook">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/felipeaalves94/" target="_blank" class="iconLinkedin">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                    </ul>
+                </div>
             </div>
         </div>
-        <!-- </div> -->
-        <!-- <div  class="row"> -->
-        <div class="card">
-            <div class="zoom">
-                <a href="https://github.com/prisciladuarte" target="_blank"><img class="img-produto img-responsive" src='https://i.imgur.com/r5L3Rk5.png' class="card-img-top img"   alt="imagem do produto"></a>
-                <h2 class="text-center">Mabiá</h2>
-            </div>
-        </div>
-        <!-- </div> -->
-        <!-- <div  class="row"> -->
-        <div class="card">
-            <div class="zoom">
-                <a href="https://github.com/felipe-8847" target="_blank"><img class="img-produto img-responsive" src='https://i.imgur.com/4JfTRho.png' class="card-img-top img" alt="imagem do produto"></a>
-                <h2 class="text-center">Felipe Alves</h2>
-            </div>
-            </div>
-        </div>
-   
+    </div>
+</div>
 
 
 

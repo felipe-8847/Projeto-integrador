@@ -13,7 +13,8 @@
 }
 .nome{
     font-family: 'Atkinson Hyperlegible', sans-serif;
-    font-size: 28px;
+    font-size: 27px;
+    font-weight: bold;
 }
 .fa-user-circle-o{
     font-size: 15pt;
@@ -30,6 +31,9 @@
 .fa-shopping-cart{
     font-size: 16pt;
     padding-right: 8pt;
+}
+.pl{
+    padding-right: 10pt;
 }
 /*#mT.modal-content{
     -webkit-box-shadow:none !important; 

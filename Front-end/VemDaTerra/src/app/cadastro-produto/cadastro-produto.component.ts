@@ -7,7 +7,6 @@ import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -19,10 +18,10 @@ export class CadastroProdutoComponent implements OnInit {
   produto: Produto = new Produto()
   listaProdutos: Produto[]
 
-
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
   idcategoria: number
+  ok: boolean = false
 
 
   user: User = new User()
@@ -48,8 +47,11 @@ export class CadastroProdutoComponent implements OnInit {
   findAllProdutos(){
     this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
       this.listaProdutos = resp
+      console.log(" teste "+ this.listaProdutos)
     })
   }
+  
+
   cadastrarP(){
 
     let usuario: User = new User()
@@ -65,11 +67,10 @@ export class CadastroProdutoComponent implements OnInit {
      this.user.id = this.idUser
      this.produto.usuario = this.user
 
-
-    console.log("user" + JSON.stringify(this.produto))
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
-      Swal.fire('Produto Cadastrado com Sucesso!!')
+      alert('Produto cadastrado com sucesso!!!')
+
       this.produto = new Produto()
       this.findAllProdutos()
     })
@@ -93,6 +94,20 @@ export class CadastroProdutoComponent implements OnInit {
     this.categoriaService.getByIdCategoria(this.idcategoria).subscribe((resp: Categoria) =>{
       this.categoria = resp
     })
+  }
+
+  compararId(){
+    
+    if (environment.id != this.produto.usuario.id){
+      console.log("Env:"+environment.id + "Pro:"+this.produto.usuario.id)
+      return this.ok
+
+    }else{
+      
+      return this.ok = true
+    }
+
+   
   }
 
 }
