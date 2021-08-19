@@ -38,23 +38,13 @@ export class CategoriaDeleteComponent implements OnInit {
   apagar(){
     this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
       this.router.navigate(['/cadastro/categoria'])
-      Swal.fire({
-        title: 'Você tem certeza?',
-        text: "Não será possível reverter isso!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Sim, tenho certeza'
-      }).then((result) => {
-        if (result.isConfirmed) {
+      
           Swal.fire(
             'Deletado!',
             'Sua Categoria foi deletada',
             'success'
           )
-        }
-      })
+
     })
   }
 }

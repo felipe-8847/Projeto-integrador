@@ -43,24 +43,11 @@ export class ProdutoDeleteComponent implements OnInit {
     this.produtoService.deleteProduto(this.idProd).subscribe(()=>{
       
     this.router.navigate(['/cadastro/produto'])
-    Swal.fire({
-      title: 'Você tem certeza?',
-      text: "Não será possível reverter isso!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sim, tenho certeza'
-    }).then((result) => {
-      if (result.isConfirmed) {
         Swal.fire(
           'Deletado!',
           'Seu produto foi deletado',
           'success'
-        )
-      }
-    })
-    
+        )  
     })
   }
 
