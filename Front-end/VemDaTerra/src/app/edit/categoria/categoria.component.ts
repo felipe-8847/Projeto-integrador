@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-categoria',
@@ -34,7 +35,7 @@ export class CategoriaComponent implements OnInit {
   atualizar(){
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria = resp
-      alert('Categoria atualizada com sucesso!')
+      Swal.fire('Categoria atualizada!')
       this.router.navigate(['/cadastro/categoria'])
     })
   }
